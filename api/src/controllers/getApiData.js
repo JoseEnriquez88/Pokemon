@@ -20,7 +20,7 @@ const getApiData = async (limit) => {
         return {
             name: pokemonData.name,
             id: pokemonData.id,
-            image: pokemonData.sprites.other['official-artwork'].front_default,
+            image: pokemonData.sprites?.other?.dream_world?.front_default,
             height: pokemonData.height,
             weight: pokemonData.weight,
             life: pokemonData.stats[0].base_stat,
