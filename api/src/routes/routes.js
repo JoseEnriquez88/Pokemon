@@ -3,7 +3,7 @@ const { Router } = require('express');
 // Ejemplo: const authRouter = require('./auth.js');
 
 //importo los handlers
-const getApiDataHandler = require('../handlers/getAPiDataHandler');
+const getAllPokemonsHandler = require('../handlers/getAllPokemonsHandler');
 const getPokemonByIdHandler = require('../handlers/getPokemonByIdHandler');
 const getPokemonByNameHandler = require('../handlers/getPokemonByNameHandler');
 const postPokemonHandler = require('../handlers/postPokemonHandler');
@@ -15,7 +15,7 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 //!GET | /pokemons
-router.get('/pokemons', getApiDataHandler);
+router.get('/pokemons', getAllPokemonsHandler);
 
 //!GET | /pokemons/:idPokemon
 router.get('/pokemons/:id', getPokemonByIdHandler);
