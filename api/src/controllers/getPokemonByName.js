@@ -2,7 +2,7 @@ const getApiData = require('./getApiData');
 const getPokemonsDB = require('./getPokemonsDB');
 
 const getPokemonByName = async (name) => {
-    const apiPokemons = await getApiData();
+    const apiPokemons = await getApiData(48);
     const DBPokemons = await getPokemonsDB();
     const allPokemons = [...apiPokemons, ...DBPokemons];
     if(name){
