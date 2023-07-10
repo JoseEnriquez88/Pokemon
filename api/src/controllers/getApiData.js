@@ -1,5 +1,4 @@
 //Este componente trae todos los pokemones de la API
-
 const axios = require('axios');
 const URL = 'https://pokeapi.co/api/v2/pokemon';
 
