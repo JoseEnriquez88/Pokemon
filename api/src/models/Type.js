@@ -11,9 +11,7 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                notEmpty: {
-                    msg: 'Es necesario que el tipo de pokemon tenga nombre',
-                },
+                notEmpty: true,
             },
         },
     }, { timestamps: false }

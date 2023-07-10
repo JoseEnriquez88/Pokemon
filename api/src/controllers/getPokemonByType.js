@@ -3,23 +3,22 @@ const axios = require('axios');
 const URL = 'https://pokeapi.co/api/v2/type/';
 
 const getPokemonByType = async () => {
-    //obtengo los tipos de la base de datos
+    // Obtengo los tipos de la base de datos
     const typesDB = await Type.findAll();
-    if(typesDB.length > 0) return typesDB;
-    
-    //obtengo los tipos de la api
+    if (typesDB.length > 0) return typesDB;
+
+    // Obtengo los tipos de la API
     const response = await axios.get(URL);
     const typesApi = response.data.results;
 
-    //guardo los tipos en la base de datos
-    const createdTypes = await Promise.all(
-        typesApi.map(async (type) => {
-            return Type.create({
-                name: type.name,
-                id: Number.parseInt(type.url.slice(31)),
-            });
-        })
-    );
+    // Guardo los tipos en la base de datos
+    const typesToCreate = typesApi.map(type => ({
+        name: type.name,
+        id: Number.parseInt(type.url.slice(31)),
+    }));
+
+    const createdTypes = await Type.bulkCreate(typesToCreate);
+
     return createdTypes;
 };
 
