@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: #36626a; */
+    background-color: #385170;
+    padding: 3rem;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.section {
+    display: flex;
+    gap: 1rem;
+}
+
+.section a {
+    transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+}
+
+.section a:hover {
+    color: cornflowerblue;
+}

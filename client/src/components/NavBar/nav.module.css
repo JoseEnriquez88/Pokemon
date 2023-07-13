@@ -1,0 +1,45 @@
+/* color: #212529; color para la navbar */
+
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #142d4c;
+    color: #ececec;
+    padding: 1em;
+}
+
+.cntnr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.cntnr button {
+    background-color: transparent;
+    color: #ececec;
+    border: none;
+    font-family: Sniglet, sans-serif;
+    font-size: 15px;
+}
+
+.sort{
+    margin-top: -25px;
+}
+
+.sort p {
+    font-family: Sniglet, sans-serif;
+}
+
+.findOrCreate{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.findOrCreate button{
+    margin-bottom: -20px;
+}

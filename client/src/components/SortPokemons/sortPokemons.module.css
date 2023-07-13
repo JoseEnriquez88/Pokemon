@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+.select,
+.origin,
+.attack,
+.types{
+    background-color: #385170;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+    color: #ececec;
+    box-decoration-break: slice;
+    margin-right: 1rem;
+    font-family: Sniglet, cursive;
+    cursor: pointer;
+}

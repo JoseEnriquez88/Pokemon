@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+.mainCntnr{
+    background-color: #212529;
+    border: 3px solid violet;
+    border-radius: 50px;
+    width: 25%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-family: 'Sniglet', cursive;
+    color: #fff;
+}
+
+.formCntnr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.formCntnr input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* gap: 5rem; */
+    outline: 2px solid var(--clr);
+}
+
+.types option{
+    width: 100%;
+}
+
+.btnCntnr{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 1rem;
+}
+
+.btnCntnr button{
+    background-color: yellow;
+    border-radius: 50px;
+    font-family: 'Sniglet', cursive;
+    color: #fff;
+}
+

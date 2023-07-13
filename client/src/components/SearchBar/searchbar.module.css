@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+.bar{
+    margin-bottom: -20px;
+}
+
+.bar input{
+    border-radius: 20px 0px 0px 20px;
+    padding: 10px;
+}
+
+.btn{
+    font-family: Sniglet, cursive;
+    background-color: #385170;
+    color: #ececec;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
+    padding: 9.5px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
