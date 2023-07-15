@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllTypes } from '../../redux/actions';
+import { Link } from 'react-router-dom';
 import style from './create.module.css';
 
 const Create = () => {
@@ -50,7 +51,7 @@ const Create = () => {
         </div>
         <div classname={style.types}>
           <label htmlFor="types">Tipos:</label>
-          <select name="types" id="types">
+          <select className={style.selectTypes} name="types" id="types">
             {types.map((type) => (
               <option key={type} value={type}>
                 {type}
@@ -60,7 +61,9 @@ const Create = () => {
         </div>
         <div className={style.btnCntnr}>
           <button>Crear Pokemon</button>
-          <button>volver</button>
+          <Link to='/home'>
+            <button>volver</button>
+          </Link>
         </div>
       </form>
     </div>

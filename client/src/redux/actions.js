@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
+import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
 import axios from 'axios';
 
 export const getAllPokemons = () => {
@@ -121,6 +121,13 @@ export const apiDbFilter = (filterType) => {
         payload: filterType
     };
 };
+
+export const alphabeticSort = () => {
+    return{
+        type: ALPHABETIC_SORT
+    }
+};
+
 
 export const cleanDetail = () => {
     return async (dispatch)=> {

@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
+import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
 
 const initialState = {
     pokemons: [],
@@ -65,6 +65,12 @@ const reducer = (state = initialState, action) => { //action => type, payload
             }
             break;
 
+        case ALPHABETIC_SORT:
+            const sortedPokemons = [...state.pokemons].sort((a, b) => a.name.localeCompare(b.name))
+            return{
+                ...state,
+                pokemons: sortedPokemons
+            }
         case CLEAN_DETAIL:
             return{
                 ...state,

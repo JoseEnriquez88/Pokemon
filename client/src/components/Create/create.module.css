@@ -2,7 +2,7 @@
 
 .mainCntnr{
     background-color: #212529;
-    border: 3px solid violet;
+    border: 3px solid #385170;
     border-radius: 50px;
     width: 25%;
     height: 100%;
@@ -27,7 +27,7 @@
     flex-direction: column;
     width: 100%;
     /* gap: 5rem; */
-    outline: 2px solid var(--clr);
+    /* outline: 2px solid var(--clr); */
 }
 
 .types option{
@@ -41,9 +41,24 @@
 }
 
 .btnCntnr button{
-    background-color: yellow;
+    background-color: #385170;
+    border: none;
     border-radius: 50px;
-    font-family: 'Sniglet', cursive;
+    font-family: Sniglet, sans-serif;
     color: #fff;
 }
 
+.btnCntnr button:hover{
+    cursor: pointer;
+}
+
+.types{
+    display: flex;
+}
+
+.selectTypes{
+    background-color: #212529;
+    border: none;
+    color: #ececec;
+    font-family: Sniglet, sans-serif;
+}

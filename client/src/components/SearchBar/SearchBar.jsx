@@ -5,7 +5,7 @@ const SearchBar = ({ onSearch, handleChange }) => {
    return (
       <form className={style.bar}>
          <input onChange={handleChange} placeholder='Buscar Pokemon' />
-         <submit onClick={onSearch} className={style.btn}><FaSearch/></submit>
+         <button onClick={onSearch} className={style.btn}><FaSearch/></button>
       </form>
    );
 };

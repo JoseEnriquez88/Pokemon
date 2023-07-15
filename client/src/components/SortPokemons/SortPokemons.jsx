@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { apiDbFilter, getAllTypes } from '../../redux/actions';
+import { apiDbFilter, getAllTypes, alphabeticSort } from '../../redux/actions';
 import style from './sortPokemons.module.css';
 
 const SortPokemons = () => {
@@ -19,9 +19,13 @@ const SortPokemons = () => {
     }
   };
 
+  const handleSort = (event) => {
+    dispatch(alphabeticSort())
+  };
+
   return (
     <div className={style.mainCntnr}>
-      <select className={style.select} defaultValue="" required>
+      <select className={style.select} defaultValue="" required onChange={handleSort}>
         <option value="" disabled>Alfabeticamente</option>
         <option value="asc">Ascendente</option>
         <option value="desc">Descendente</option>
