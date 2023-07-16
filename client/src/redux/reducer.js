@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
+import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, POST_POKEMON, API_DB_FILTER, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
 
 const initialState = {
     pokemons: [],
@@ -34,6 +34,12 @@ const reducer = (state = initialState, action) => { //action => type, payload
             return {
                 ...state,
                 types: action.payload
+            }
+        
+        case POST_POKEMON:
+            return{
+                ...state,
+                pokemons: [...state.pokemons, action.payload]
             }
 
         case ERROR:

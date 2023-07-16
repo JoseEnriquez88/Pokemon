@@ -1,9 +1,9 @@
 const { Pokemon, Type } = require('../db.js');
 const { Op } = require('sequelize');
-const formValidation = require('../helpers/formValidation.js');
+// const formValidation = require('../helpers/formValidation.js');
 
 const postPokemon = async (name, image, types, life, attack, defense, speed, height, weight) => {
-    formValidation(name, image, types, life, attack, defense, speed, height, weight);
+    // formValidation(name, image, types, life, attack, defense, speed, height, weight);
 
     const newPokemon = await Pokemon.create({
         name,

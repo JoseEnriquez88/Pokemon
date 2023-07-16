@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
+import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, POST_POKEMON, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
 import axios from 'axios';
 
 export const getAllPokemons = () => {
@@ -101,11 +101,11 @@ export const getAllTypes = () => {
             if (!data || data.length === 0) throw new Error('No se encuentran tipos en la base de datos');
 
             const typesFound = data.map((tipo) => tipo.name);
-            return dispatch({
+            dispatch({
                 type: GET_ALL_TYPES,
                 payload: typesFound,
-            })
-
+            });
+            return typesFound;
         } catch (error) {
             return dispatch({
                 type: ERROR,
@@ -113,6 +113,26 @@ export const getAllTypes = () => {
             })
         }
     };
+};
+
+export const createPokemon = (input) => {
+    const endpoint = 'http://localhost:3001/pokemons';
+    return async (dispatch) => {
+        try {
+            const response = await axios.post(endpoint, input);
+            const createdPokemon = response.data;
+
+            dispatch({
+                type: POST_POKEMON,
+                payload: createdPokemon
+            });
+        } catch (error) {
+            return dispatch({
+                type: ERROR,
+                payload: error.response.data.error,
+            })
+        }
+    }
 };
 
 export const apiDbFilter = (filterType) => {
