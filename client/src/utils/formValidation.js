@@ -21,6 +21,8 @@ const formValidation = (pokemon) => {
     if(pokemon.height <= 0) errors.height = 'Este campo no puede estar vacío';
     if(pokemon.weight <= 0) errors.weight = 'Este campo no puede estar vacío';
 
+    if(borraresto) 
+
     // Valido que los tipos sean solo letras
     if (pokemon.types === '') errors.types = 'Debe seleccionar al menos 1 tipo'; 
 

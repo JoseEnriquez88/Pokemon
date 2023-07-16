@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, POST_POKEMON, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESAGGE, ERROR } from "./action-types";
+import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, POST_POKEMON, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESSAGE, ERROR } from "./action-types";
 import axios from 'axios';
 
 export const getAllPokemons = () => {
@@ -160,7 +160,7 @@ export const cleanDetail = () => {
 export const clearMessage = () => {
     return async (dispatch) => {
         return dispatch({
-            type: CLEAN_MESAGGE,
+            type: CLEAN_MESSAGE,
         })
     };
 };

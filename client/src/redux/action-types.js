@@ -7,4 +7,4 @@ export const API_DB_FILTER = 'API_DB_FILTER';
 export const ALPHABETIC_SORT = 'ALPHABETIC_SORT';
 export const ERROR = 'ERROR';
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
-export const CLEAN_MESAGGE = 'CLEAN_MESAGGE';
+export const CLEAN_MESSAGE = 'CLEAN_MESSAGE'; 

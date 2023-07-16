@@ -107,6 +107,7 @@ const Create = () => {
           </Link>
         </div>
       </form>
+      <p>borrar esto</p>
     </div>
   );
 };
