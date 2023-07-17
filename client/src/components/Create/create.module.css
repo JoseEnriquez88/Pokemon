@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 
-.mainCntnr{
+.mainCntnr {
     background-color: #212529;
     border: 3px solid #385170;
     border-radius: 50px;
@@ -13,7 +13,7 @@
     color: #fff;
 }
 
-.formCntnr{
+.formCntnr {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +22,7 @@
     margin-bottom: 10px;
 }
 
-.formCntnr input{
+.formCntnr input {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -33,17 +33,17 @@
     /* outline: 2px solid var(--clr); */
 }
 
-.types option{
+.types option {
     width: 100%;
 }
 
-.btnCntnr{
+.btnCntnr {
     display: flex;
     /* justify-content: space-between; */
     gap: 1rem;
 }
 
-.btnCntnr button{
+.btnCntnr button {
     background-color: #385170;
     border: none;
     border-radius: 50px;
@@ -51,33 +51,55 @@
     color: #fff;
 }
 
-.btnCntnr button:hover{
+.btnCntnr button:hover {
     cursor: pointer;
 }
 
-.types{
+.types {
     display: flex;
 }
 
-.selectTypes{
+.selectTypes {
     background-color: #212529;
     border: none;
     color: #ececec;
     font-family: Sniglet, sans-serif;
 }
 
-.error{
+.error {
     font-size: 15px;
     color: red;
     max-width: 250px;
 }
 
-.types{
+.types {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    align-items: flex-start;
 }
 
+.types label{
+    margin: 0 auto;
+}
+
+.types p{
+    margin: 0 auto;
+    color: cornflowerblue;
+}
+
+.checkboxesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkCntnr {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 
 .selectTypes{
     background-color: #385170;
     font-family: Sniglet, sans-serif; 
@@ -93,8 +115,8 @@
     color: #ececec;
     font-family: Sniglet, sans-serif;
     cursor: pointer;
-}
+} */
 
-.checkCntnr{
-    
+.checkCntnr {
+    margin-right: 10px;
 }

@@ -39,7 +39,8 @@ const reducer = (state = initialState, action) => { //action => type, payload
         case POST_POKEMON:
             return {
                 ...state,
-                pokemons: [...state.pokemons, action.payload]
+                pokemons: [...state.pokemons, action.payload],
+                pokemon: action.payload
             }
 
         case ERROR:

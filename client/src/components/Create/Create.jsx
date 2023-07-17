@@ -38,27 +38,29 @@ const Create = () => {
   const handleTypeChange = (event) => {
     const selectedType = event.target.value;
     const isChecked = event.target.checked;
+    const currentTypeCount = pokemon.types.length;
 
-    if (isChecked) {
-      setPokemon({
-        ...pokemon,
-        types: [...pokemon.types, selectedType]
-      });
-    } else {
+    if (isChecked && currentTypeCount < 2) {
+      setPokemon((prevState) => ({
+        ...prevState,
+        types: [...prevState.types, selectedType],
+      }));
+    } else if (!isChecked && currentTypeCount > 1) {
       const updatedTypes = pokemon.types.filter((type) => type !== selectedType);
-      setPokemon({
-        ...pokemon,
-        types: updatedTypes
-      });
+      setPokemon((prevState) => ({
+        ...prevState,
+        types: updatedTypes,
+      }));
     }
   };
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (pokemon.name && pokemon.image && pokemon.life && pokemon.attack && pokemon.defense) {
+    if (pokemon.name && pokemon.image && pokemon.life && pokemon.attack && pokemon.defense && pokemon.types.length === 2) {
       const pokemonCreado = {
         ...pokemon,
-        types: [pokemon.types[0]]
+        types: [pokemon.types[0], pokemon.types[1]],
       }
       if (dispatch(createPokemon(pokemonCreado))) {
         alert(`El Pokemon ${pokemon.name} fue creado exitosamente`);
@@ -78,9 +80,10 @@ const Create = () => {
         alert(`El pokemon ${pokemon.name} no pudo crearse`);
       }
     } else {
-      alert('Debes completar todos los campos obligatorios');
+      alert('Debes completar todos los campos obligatorios y seleccionar exactamente dos tipos');
     }
   };
+
 
 
   useEffect(() => {
@@ -150,35 +153,26 @@ const Create = () => {
         </div>
 
         {/* //! div de los tipos */}
-        {/* <div className={style.types}>
-          <label htmlFor="types">Tipos:</label>
-          <select className={style.selectTypes} name="types" id="types" onChange={handleChange}>
-            <option value="" hidden>Seleccione el tipo</option>
-            {types.map((type) => (
-              <option className={style.typeOption} key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-          {errors.types && <p className={style.error}>{errors.types}</p>}
-        </div> */}
-
         <div className={style.types}>
           <label>Tipos:</label>
-          {types.map((type) => (
-            <div className={style.checkCntnr} key={type}>
-              <input
-                type="checkbox"
-                name="types"
-                value={type}
-                checked={pokemon.types.includes(type)}
-                onChange={handleTypeChange}
-              />
-              <span>{type}</span>
-            </div>
-          ))}
+          <p>elige 2 tipos</p>
+          <div className={style.checkboxesContainer}>
+            {types.map((type) => (
+              <div className={style.checkCntnr} key={type}>
+                <input
+                  type="checkbox"
+                  name="types"
+                  value={type}
+                  checked={pokemon.types.includes(type)}
+                  onChange={handleTypeChange}
+                />
+                <span>{type}</span>
+              </div>
+            ))}
+          </div>
           {errors.types && <p className={style.error}>{errors.types}</p>}
         </div>
+
 
         {/* //!div para los botones */}
         <div className={style.btnCntnr}>
