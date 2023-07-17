@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, POST_POKEMON, API_DB_FILTER, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESSAGE, ERROR } from "./action-types";
+import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, POST_POKEMON, API_DB_FILTER, ALPHABETIC_SORT, RESET_ALPHABETIC_SORT, SORT_BY_TYPE, CLEAN_DETAIL, CLEAN_MESSAGE, ERROR, SORT_BY_ATTACK } from "./action-types";
 
 const initialState = {
     pokemons: [],
@@ -23,9 +23,9 @@ const reducer = (state = initialState, action) => { //action => type, payload
                 ...state,
                 pokemons: action.payload,
             }
-        
+
         case GET_POKEMON_BY_ID:
-            return{
+            return {
                 ...state,
                 pokemons: [action.payload]
             }
@@ -35,9 +35,9 @@ const reducer = (state = initialState, action) => { //action => type, payload
                 ...state,
                 types: action.payload
             }
-        
+
         case POST_POKEMON:
-            return{
+            return {
                 ...state,
                 pokemons: [...state.pokemons, action.payload]
             }
@@ -47,24 +47,24 @@ const reducer = (state = initialState, action) => { //action => type, payload
                 ...state,
                 message: action.payload
             }
-        
+
         case API_DB_FILTER:
             const copia = [...state.copyPokemons];
-            if(action.payload === 'api'){
+            if (action.payload === 'api') {
                 const apiPokemones = copia.filter(p => typeof p.id === 'number');
-                return{
+                return {
                     ...state,
                     pokemons: apiPokemones
                 }
-            }else if(action.payload === 'db'){
+            } else if (action.payload === 'db') {
                 const dbPokemones = copia.filter(p => typeof p.id === 'string');
-                return{
+                return {
                     ...state,
                     pokemons: dbPokemones
                 }
-            }else if(action.payload === 'all'){
+            } else if (action.payload === 'all') {
                 const allPokemons = [...state.copyPokemons];
-                return{
+                return {
                     ...state,
                     pokemons: allPokemons
                 };
@@ -72,13 +72,47 @@ const reducer = (state = initialState, action) => { //action => type, payload
             break;
 
         case ALPHABETIC_SORT:
-            const sortedPokemons = [...state.pokemons].sort((a, b) => a.name.localeCompare(b.name))
-            return{
+            const pokemonFiltered = [...state.copyPokemons];
+            return {
+                ...state,
+                pokemons: pokemonFiltered.sort((a, b) => {
+                    const nameA = a.name.toUpperCase();
+                    const nameB = b.name.toUpperCase();
+                    if (action.payload === 'asc') return nameA.localeCompare(nameB);
+                    else return nameB.localeCompare(nameA)
+                })
+            }
+
+        case RESET_ALPHABETIC_SORT:
+            return {
+                ...state,
+                pokemons: [...state.copyPokemons]
+            }
+
+        case SORT_BY_TYPE:
+            const sortPokemonByType = state.pokemons.filter(pokemon => pokemon.types.includes(action.payload));
+            return {
+                ...state,
+                pokemons: sortPokemonByType
+            }
+
+        case SORT_BY_ATTACK:
+            const sortedPokemons = [...state.pokemons];
+            sortedPokemons.sort((a, b) => {
+                if (action.payload === "min") {
+                    return a.attack - b.attack;
+                } else if (action.payload === "max") {
+                    return b.attack - a.attack;
+                }
+                return 0;
+            });
+            return {
                 ...state,
                 pokemons: sortedPokemons
-            }
+            };
+
         case CLEAN_DETAIL:
-            return{
+            return {
                 ...state,
                 pokemonDetail: null,
             }

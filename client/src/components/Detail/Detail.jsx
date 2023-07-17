@@ -20,7 +20,7 @@ const Detail = () => {
     }, [dispatch, id]);
 
     return (
-        <>
+        <div>
             <NavBar />
             <div className={style.mainCntnr}>
                 {name ? (
@@ -55,7 +55,7 @@ const Detail = () => {
                     <h2>Loading...</h2>
                 )}
             </div>
-        </>
+        </div>
     )
 }
 

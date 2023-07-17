@@ -1,4 +1,4 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, POST_POKEMON, ALPHABETIC_SORT, CLEAN_DETAIL, CLEAN_MESSAGE, ERROR } from "./action-types";
+import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, API_DB_FILTER, POST_POKEMON, ALPHABETIC_SORT, RESET_ALPHABETIC_SORT, SORT_BY_TYPE, CLEAN_DETAIL, CLEAN_MESSAGE, ERROR, SORT_BY_ATTACK } from "./action-types";
 import axios from 'axios';
 
 export const getAllPokemons = () => {
@@ -65,7 +65,7 @@ export const getPokemonById = (id) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.get(`${endpoint}/${id}`);
-            if(!data) throw new Error(`No se encontró el pokemon con el id: ${id}`);
+            if (!data) throw new Error(`No se encontró el pokemon con el id: ${id}`);
 
             const pokemon = {
                 name: data.name,
@@ -101,6 +101,7 @@ export const getAllTypes = () => {
             if (!data || data.length === 0) throw new Error('No se encuentran tipos en la base de datos');
 
             const typesFound = data.map((tipo) => tipo.name);
+            // console.log(typesFound);
             dispatch({
                 type: GET_ALL_TYPES,
                 payload: typesFound,
@@ -115,11 +116,11 @@ export const getAllTypes = () => {
     };
 };
 
-export const createPokemon = (input) => {
+export const createPokemon = (pokemonCreado) => {
     const endpoint = 'http://localhost:3001/pokemons';
     return async (dispatch) => {
         try {
-            const response = await axios.post(endpoint, input);
+            const response = await axios.post(endpoint, pokemonCreado);
             const createdPokemon = response.data;
 
             dispatch({
@@ -142,15 +143,35 @@ export const apiDbFilter = (filterType) => {
     };
 };
 
-export const alphabeticSort = () => {
-    return{
-        type: ALPHABETIC_SORT
+export const alphabeticSort = (order) => {
+    return {
+        type: ALPHABETIC_SORT,
+        payload: order
     }
 };
 
+export const resetAlphabeticSort = () => {
+    return {
+        type: RESET_ALPHABETIC_SORT
+    }
+};
+
+export const sortByType = (type) => {
+    return{
+        type: SORT_BY_TYPE,
+        payload: type
+    }
+};
+
+export const sortByAttack = (attack) => {
+    return{
+        type: SORT_BY_ATTACK,
+        payload: attack
+    }
+};
 
 export const cleanDetail = () => {
-    return async (dispatch)=> {
+    return async (dispatch) => {
         return dispatch({
             type: CLEAN_DETAIL,
         })
