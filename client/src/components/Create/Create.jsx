@@ -1,188 +1,165 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { getAllTypes } from '../../redux/actions';
+import style from './create.module.css';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createPokemon } from '../../redux/actions';
-import style from './create.module.css';
-import formValidation from '../../utils/formValidation';
 
 const Create = () => {
   const dispatch = useDispatch();
-  const types = useSelector((state) => state.types);
-  // const [selectedTypes, setSelectedTypes] = useState([])
-  const [errors, setErrors] = useState({});
+  const [selectedTypes, setSelectedTypes] = useState([]);
   const [pokemon, setPokemon] = useState({
     name: '',
     image: '',
-    life: 0,
-    attack: 0,
-    defense: 0,
-    speed: 0,
-    height: 0,
-    weight: 0,
-    types: []
+    life: '',
+    attack: '',
+    defense: '',
+    speed: '',
+    height: '',
+    weight: '',
+    types: [],
   });
+
+  const types = [
+    'normal',
+    'fighting',
+    'flying',
+    'poison',
+    'ground',
+    'rock',
+    'bug',
+    'ghost',
+    'steel',
+    'fire',
+    'water',
+    'grass',
+    'electric',
+    'psychic',
+    'ice',
+    'dragon',
+    'dark',
+    'fairy',
+    'unknown',
+    'shadow',
+  ];
 
   const handleChange = (event) => {
     setPokemon({
       ...pokemon,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
-
-    setErrors(formValidation({
-      ...pokemon,
-      [event.target.name]: event.target.value
-    }));
   };
 
   const handleTypeChange = (event) => {
-    const selectedType = event.target.value;
-    const isChecked = event.target.checked;
-    const currentTypeCount = pokemon.types.length;
+    const { value, checked } = event.target;
 
-    if (isChecked && currentTypeCount < 2) {
-      setPokemon((prevState) => ({
-        ...prevState,
-        types: [...prevState.types, selectedType],
-      }));
-    } else if (!isChecked && currentTypeCount > 1) {
-      const updatedTypes = pokemon.types.filter((type) => type !== selectedType);
-      setPokemon((prevState) => ({
-        ...prevState,
-        types: updatedTypes,
-      }));
+    if (checked) {
+      if (selectedTypes.length < 2) {
+        setSelectedTypes((prevSelectedTypes) => [...prevSelectedTypes, value]);
+      } else {
+        event.target.checked = false; // Desmarca la opción si ya se seleccionaron dos tipos
+      }
+    } else {
+      setSelectedTypes((prevSelectedTypes) =>
+        prevSelectedTypes.filter((type) => type !== value)
+      );
     }
   };
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (pokemon.name && pokemon.image && pokemon.life && pokemon.attack && pokemon.defense && pokemon.types.length === 2) {
-      const pokemonCreado = {
-        ...pokemon,
-        types: [pokemon.types[0], pokemon.types[1]],
-      }
-      if (dispatch(createPokemon(pokemonCreado))) {
-        alert(`El Pokemon ${pokemon.name} fue creado exitosamente`);
-        setPokemon({
-          name: '',
-          image: '',
-          life: 0,
-          attack: 0,
-          defense: 0,
-          speed: 0,
-          height: 0,
-          weight: 0,
-          types: []
-        });
-        setErrors({});
-      } else {
-        alert(`El pokemon ${pokemon.name} no pudo crearse`);
-      }
-    } else {
-      alert('Debes completar todos los campos obligatorios y seleccionar exactamente dos tipos');
-    }
+    const createdPokemon = {
+      ...pokemon,
+      types: selectedTypes,
+    };
+    dispatch(createPokemon(createdPokemon))
+    .then(() => {
+      alert(`El pokemon ${createPokemon} se creó exitosamente`);
+    })
+    .catch(() => {
+      alert(`No se pudo crear el pokemon ${createPokemon}. Por favor, inténtalo nuevamente.`);
+    });
   };
 
-
-
-  useEffect(() => {
-    dispatch(getAllTypes());
-  }, [dispatch]);
-
   return (
-    <div className={style.mainCntnr}>
-      <h1>Crear Pokemon</h1>
-      <form onSubmit={handleSubmit} className={style.formCntnr}>
+    <form onSubmit={handleSubmit} className={style.mainCntnr}>
+      <h1>Crea tu pokemon</h1>
 
-        {/* //!div para el nombre */}
-        <div>
-          <label htmlFor="name">Nombre:</label>
-          <input type="text" name="name" onChange={handleChange} />
-          {errors.name && <p className={style.error}>{errors.name}</p>}
+      {/* Div para el nombre */}
+      <div className={style.nameCntnr}>
+        <label htmlFor="name">Nombre:</label>
+        <input type="text" name="name" onChange={handleChange} />
+      </div>
+
+      {/* Div para imagen */}
+      <div className={style.imageCntnr}>
+        <label htmlFor="image">Imagen:</label>
+        <input type="text" name="image" onChange={handleChange} />
+      </div>
+
+      {/* Div para la vida */}
+      <div className={style.lifeCntnr}>
+        <label htmlFor="life">Vida:</label>
+        <input type="text" name="life" onChange={handleChange} />
+      </div>
+
+      {/* Div para ataque */}
+      <div className={style.attackCntnr}>
+        <label htmlFor="attack">Ataque:</label>
+        <input type="text" name="attack" onChange={handleChange} />
+      </div>
+
+      {/* Div para defensa */}
+      <div className={style.defenseCntnr}>
+        <label htmlFor="defense">Defensa:</label>
+        <input type="text" name="defense" onChange={handleChange} />
+      </div>
+
+      {/* Div para velocidad */}
+      <div className={style.speedCntnr}>
+        <label htmlFor="speed">Velocidad:</label>
+        <input type="text" name="speed" onChange={handleChange} />
+      </div>
+
+      {/* Div para altura */}
+      <div className={style.heightCntnr}>
+        <label htmlFor="height">Altura:</label>
+        <input type="text" name="height" onChange={handleChange} />
+      </div>
+
+      {/* Div para peso */}
+      <div className={style.weightCntnr}>
+        <label htmlFor="weight">Peso:</label>
+        <input type="text" name="weight" onChange={handleChange} />
+      </div>
+
+      {/* Div para los tipos */}
+      <div className={style.typesCntnr}>
+        <label htmlFor="types">Tipos:</label>
+        <p>Elija 2 tipos</p>
+        <div className={style.checkTypes}>
+          {types.map((type, index) => (
+            <div key={index}>
+              <input
+                type="checkbox"
+                value={type}
+                onChange={handleTypeChange}
+                checked={selectedTypes.includes(type)}
+                disabled={selectedTypes.length === 2 && !selectedTypes.includes(type)}
+              />
+              <label htmlFor={type}>{type}</label>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* //!div para la imagen */}
-        <div>
-          <label htmlFor="image">Imagen:</label>
-          <input type="text" name="image" onChange={handleChange} />
-          {errors.image && <p className={style.error}>{errors.image}</p>}
-        </div>
-
-        {/* //!div para la vida */}
-        <div>
-          <label htmlFor="life">Vida:</label>
-          <input type="text" name="life" onChange={handleChange} />
-          {errors.life && <p className={style.error}>{errors.life}</p>}
-        </div>
-
-
-        {/* //!div para el ataque */}
-        <div>
-          <label htmlFor="attack">Ataque:</label>
-          <input type="text" name="attack" onChange={handleChange} />
-          {errors.attack && <p className={style.error}>{errors.attack}</p>}
-        </div>
-
-        {/* //!div para la defensa */}
-        <div>
-          <label htmlFor="defense">Defensa:</label>
-          <input type="text" name="defense" onChange={handleChange} />
-          {errors.defense && <p className={style.error}>{errors.defense}</p>}
-        </div>
-
-        {/* //!div para la velocidad */}
-        <div>
-          <label htmlFor="speed">Velocidad:</label>
-          <input type="text" name="speed" onChange={handleChange} />
-          {errors.speed && <p className={style.error}>{errors.speed}</p>}
-        </div>
-
-        {/* //!div para la altura */}
-        <div>
-          <label htmlFor="height">Altura:</label>
-          <input type="text" name="height" onChange={handleChange} />
-          {errors.height && <p className={style.error}>{errors.height}</p>}
-        </div>
-
-        {/* //!div para el peso */}
-        <div>
-          <label htmlFor="weight">Peso:</label>
-          <input type="text" name="weight" onChange={handleChange} />
-          {errors.weight && <p className={style.error}>{errors.weight}</p>}
-        </div>
-
-        {/* //! div de los tipos */}
-        <div className={style.types}>
-          <label>Tipos:</label>
-          <p>elige 2 tipos</p>
-          <div className={style.checkboxesContainer}>
-            {types.map((type) => (
-              <div className={style.checkCntnr} key={type}>
-                <input
-                  type="checkbox"
-                  name="types"
-                  value={type}
-                  checked={pokemon.types.includes(type)}
-                  onChange={handleTypeChange}
-                />
-                <span>{type}</span>
-              </div>
-            ))}
-          </div>
-          {errors.types && <p className={style.error}>{errors.types}</p>}
-        </div>
-
-
-        {/* //!div para los botones */}
-        <div className={style.btnCntnr}>
-          <button>Crear Pokemon</button>
-          <Link to="/home">
-            <button>volver</button>
-          </Link>
-        </div>
-      </form>
-    </div>
+      {/* Div para botones */}
+      <div className={style.btnCntnr}>
+        <button>Crear pokemon</button>
+        <Link to="/home">
+          <button>Volver</button>
+        </Link>
+      </div>
+    </form>
   );
 };
 

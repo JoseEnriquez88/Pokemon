@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllPokemons, getPokemonsByName, cleanDetail, clearMessage } from '../../redux/actions';
+// import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/NavBar';
 import CardList from '../CardList/CardList';
 
@@ -42,6 +43,7 @@ const Home = () => {
     <div>
       <NavBar handleChange={handleChange} onSearch={onSearch} onLoadAllPokemons={loadAllPokemons} />
       <CardList pokemones={pokemones} />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -22,7 +22,7 @@
     color: 
 } */
 
-.return{
+.return {
     text-decoration: none;
     /* background-color: #385170; */
     border-radius: 20px;
@@ -32,21 +32,31 @@
 }
 
 .return:link,
-.return:visited{
+.return:visited {
     color: #ececec;
 }
 
-.return:hover{
+.return:hover {
     color: cornflowerblue;
     cursor: pointer;
 }
 
-.imgCntnr img{
+.imgCntnr img {
     background-color: transparent;
     max-width: 200px;
 }
 
 .dataUno p,
-.dataDos p{
+.dataDos p {
     font-size: 20px;
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    /* left: 50%; */
+    margin: 0 auto;
+    font-family: Sniglet, sans-serif;
+    font-size: 50px;
+    color: #142d4c;
 }

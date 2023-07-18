@@ -100,13 +100,13 @@ export const getAllTypes = () => {
             const { data } = await axios(endpoint);
             if (!data || data.length === 0) throw new Error('No se encuentran tipos en la base de datos');
 
-            const typesFound = data.map((tipo) => tipo.name);
+            // const typesFound = data.map((tipo) => tipo.name);
             // console.log(typesFound);
             dispatch({
                 type: GET_ALL_TYPES,
-                payload: typesFound,
+                payload: data,
             });
-            return typesFound;
+            return data;
         } catch (error) {
             return dispatch({
                 type: ERROR,

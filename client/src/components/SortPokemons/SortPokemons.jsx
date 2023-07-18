@@ -6,31 +6,37 @@ import style from './sortPokemons.module.css';
 const SortPokemons = () => {
   const dispatch = useDispatch();
   const pokemons = useSelector(state => state.pokemons);
+  const copyPokemons = useSelector(state => state.copyPokemons);
   const tipos = useSelector(state => state.types);
-  console.log(tipos);
+  // console.log(tipos);
 
   const handleFilter = (event) => {
     const filterOrigin = event.target.value;
     dispatch(apiDbFilter(filterOrigin));
   };
 
-  // const handleTypes = (event) => {
-  //   const filterType = event.target.value;
-  //   if (filterType === 'all') {
-  //     dispatch(getAllTypes(filterType));
-  //   }
-  // };
-
   const handleTypes = (event) => {
     const filterType = event.target.value;
+    let updatedPokemons = [];
+
     if (filterType === 'all') {
-      dispatch(getAllTypes(filterType));
+      updatedPokemons = copyPokemons; // Restaura todos los pokemones desde el estado de Redux
     } else {
-      dispatch(sortByType(filterType));
-      const filteredPokemons = pokemons.filter(pokemon => pokemon.types.includes(filterType));
-      if (filteredPokemons.length === 0) alert(`No se encontraron pokemons del tipo ${filterType}`)
+      const selectedTypes = event.target.selectedOptions; // Obtiene las opciones seleccionadas
+      const types = Array.from(selectedTypes).map(option => option.value); // Obtiene los valores de las opciones seleccionadas
+
+      updatedPokemons = copyPokemons.filter(pokemon => types.every(type => pokemon.types.includes(type)));
+      // Filtra los pokemones según los tipos seleccionados
     }
+
+    if (updatedPokemons.length === 0) {
+      alert(`No se encontraron pokemones con los tipos seleccionados`);
+    }
+
+    dispatch(sortByType(filterType)); // Actualiza el estado con el tipo seleccionado
   };
+
+
 
   // const handleSort = (event) => {
   //   const order = event.target.value === 'asc' ? 'asc' : 'desc';
@@ -99,7 +105,6 @@ const SortPokemons = () => {
             {type.name}
           </option>
         ))}
-
       </select>
     </div>
   );

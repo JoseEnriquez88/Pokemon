@@ -1,12 +1,12 @@
 import { GET_ALL_POKEMONS, GET_POKEMONS_BY_NAME, GET_POKEMON_BY_ID, GET_ALL_TYPES, POST_POKEMON, API_DB_FILTER, ALPHABETIC_SORT, RESET_ALPHABETIC_SORT, SORT_BY_TYPE, CLEAN_DETAIL, CLEAN_MESSAGE, ERROR, SORT_BY_ATTACK } from "./action-types";
 
 const initialState = {
-    pokemons: [],
-    copyPokemons: [],
+    pokemons: [], //todos lo pokemones
+    copyPokemons: [], //copia de todos los pokemones
     types: [], //para traer los tipos de la base de datos
-    pokemonDetail: null,
-    message: '',
-    filter: false
+    cleanPokemonDetail: null, //para borrar el detail
+    message: '', // para el mensaje de error
+    filter: false //para el filtro 
 };
 
 const reducer = (state = initialState, action) => { //action => type, payload
@@ -36,7 +36,7 @@ const reducer = (state = initialState, action) => { //action => type, payload
                 types: action.payload
             }
 
-        case POST_POKEMON:
+        case POST_POKEMON: //para crear el pokemon
             return {
                 ...state,
                 pokemons: [...state.pokemons, action.payload],
@@ -90,12 +90,20 @@ const reducer = (state = initialState, action) => { //action => type, payload
                 pokemons: [...state.copyPokemons]
             }
 
+        // case SORT_BY_TYPE:
+        //     const sortPokemonByType = state.pokemons.filter(pokemon => pokemon.types.includes(action.payload));
+        //     return {
+        //         ...state,
+        //         pokemons: sortPokemonByType
+        //     }
+
         case SORT_BY_TYPE:
-            const sortPokemonByType = state.pokemons.filter(pokemon => pokemon.types.includes(action.payload));
+            const sortPokemonByType = state.copyPokemons.filter(pokemon => pokemon.types.includes(action.payload));
             return {
                 ...state,
                 pokemons: sortPokemonByType
-            }
+            };
+
 
         case SORT_BY_ATTACK:
             const sortedPokemons = [...state.pokemons];
@@ -115,7 +123,7 @@ const reducer = (state = initialState, action) => { //action => type, payload
         case CLEAN_DETAIL:
             return {
                 ...state,
-                pokemonDetail: null,
+                cleanPokemonDetail: null,
             }
 
         case CLEAN_MESSAGE:

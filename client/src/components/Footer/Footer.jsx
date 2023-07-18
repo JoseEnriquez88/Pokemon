@@ -1,3 +1,4 @@
+import { startTransition } from 'react';
 import style from './footer.module.css'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 

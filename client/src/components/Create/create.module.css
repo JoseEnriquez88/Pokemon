@@ -13,110 +13,71 @@
     color: #fff;
 }
 
-.formCntnr {
+.nameCntnr,
+.imageCntnr,
+.lifeCntnr,
+.attackCntnr,
+.defenseCntnr,
+.speedCntnr,
+.heightCntnr,
+.weightCntnr {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 150px;
+    gap: 5px;
+}
+
+.nameCntnr input,
+.imageCntnr input,
+.lifeCntnr input,
+.attackCntnr input,
+.defenseCntnr input,
+.speedCntnr input,
+.heightCntnr input,
+.weightCntnr input{
+    background-color: #385170;
+    border: none;
+    font-family: Sniglet, sans-serif;
+    color: #ececec;
+}
+
+.typesCntnr p{
+    color: cornflowerblue;
+}
+
+.checkTypes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.checkTypes label{
+    color: cornflowerblue;
+}
+
+.checkTypes input:hover{
+    cursor: pointer;
+}
+
+.btnCntnr{
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
-    width: 100%;
-    margin-bottom: 10px;
+    padding: 10px;
 }
 
-.formCntnr input {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #385170;
-    color: #ececec;
-    border: none;
-    /* gap: 5rem; */
-    /* outline: 2px solid var(--clr); */
-}
-
-.types option {
-    width: 100%;
-}
-
-.btnCntnr {
-    display: flex;
-    /* justify-content: space-between; */
-    gap: 1rem;
-}
-
-.btnCntnr button {
+.btnCntnr button{
     background-color: #385170;
     border: none;
     border-radius: 50px;
     font-family: Sniglet, sans-serif;
-    color: #fff;
+    color: #ececec;
 }
 
 .btnCntnr button:hover {
     cursor: pointer;
-}
-
-.types {
-    display: flex;
-}
-
-.selectTypes {
-    background-color: #212529;
-    border: none;
-    color: #ececec;
-    font-family: Sniglet, sans-serif;
-}
-
-.error {
-    font-size: 15px;
-    color: red;
-    max-width: 250px;
-}
-
-.types {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.types label{
-    margin: 0 auto;
-}
-
-.types p{
-    margin: 0 auto;
-    color: cornflowerblue;
-}
-
-.checkboxesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.checkCntnr {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-/* 
-.selectTypes{
-    background-color: #385170;
-    font-family: Sniglet, sans-serif; 
-    color: #ececec;
-}
-
-.selectTypes:hover{
-    cursor: pointer;
-}
-
-.typeOption{
-    background-color: #385170;
-    color: #ececec;
-    font-family: Sniglet, sans-serif;
-    cursor: pointer;
-} */
-
-.checkCntnr {
-    margin-right: 10px;
 }

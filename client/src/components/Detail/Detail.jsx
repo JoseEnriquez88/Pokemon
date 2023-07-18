@@ -9,8 +9,10 @@ import style from './detail.module.css';
 const Detail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const { name, image, height, weight, life, attack, defense, speed, types } = useSelector(state => state.pokemons[0]);
-    // const { name, image, height, weight, life, attack, defense, speed, types } = useSelector(state => state.pokemonDetail.find(pokemon => pokemon.id === id));
+    const { name, image, height, weight, life, attack, defense, speed, types } = useSelector(state => state.pokemons.length > 0 ? state.pokemons[0] : {});
+
+    const { pokemons } = useSelector(state => state);
+    console.log(pokemons);
 
     useEffect(() => {
         dispatch(getPokemonById(id));
@@ -26,7 +28,6 @@ const Detail = () => {
                 {name ? (
                     <div className={style.container}>
                         <h1>{name}</h1>
-                        {/* <p>{id}</p> */}
                         <div className={style.imgDataCntnr}>
                             <div className={style.imgCntnr}>
                                 <img src={image} alt="img" />
@@ -34,6 +35,7 @@ const Detail = () => {
 
                             <div className={style.dataCntnr}>
                                 <div className={style.dataUno}>
+                                    <p>Id: {id}</p>
                                     <p>Height: {height}</p>
                                     <p>Weight: {weight}</p>
                                     <p>Life: {life}</p>
@@ -52,7 +54,7 @@ const Detail = () => {
                         </div>
                     </div>
                 ) : (
-                    <h2>Loading...</h2>
+                    <h2 className={style.loading}>Loading...</h2>
                 )}
             </div>
         </div>
