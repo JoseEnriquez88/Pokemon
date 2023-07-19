@@ -35,14 +35,14 @@
 .defenseCntnr input,
 .speedCntnr input,
 .heightCntnr input,
-.weightCntnr input{
+.weightCntnr input {
     background-color: #385170;
     border: none;
     font-family: Sniglet, sans-serif;
     color: #ececec;
 }
 
-.typesCntnr p{
+.typesCntnr p {
     color: cornflowerblue;
 }
 
@@ -54,15 +54,15 @@
 
 }
 
-.checkTypes label{
+.checkTypes label {
     color: cornflowerblue;
 }
 
-.checkTypes input:hover{
+.checkTypes input:hover {
     cursor: pointer;
 }
 
-.btnCntnr{
+.btnCntnr {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +70,8 @@
     padding: 10px;
 }
 
-.btnCntnr button{
+.createBtn,
+.goBackBtn {
     background-color: #385170;
     border: none;
     border-radius: 50px;
@@ -78,6 +79,22 @@
     color: #ececec;
 }
 
-.btnCntnr button:hover {
+.createBtn:disabled {
+    opacity: 0.5;
+}
+
+.createBtn:hover,
+.goBackBtn:hover {
     cursor: pointer;
+}
+
+.createBtn:disabled:hover {
+    cursor: not-allowed;
+}
+
+.errors {
+    color: red;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 10px;
 }

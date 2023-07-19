@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+.mainCntnr {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #142d4c;
+    /* border: 1px solid #5c5470; */
+    width: 40rem;
+    margin: 10rem;
+    margin-top: 80px;
+    border-radius: 50px;
+    /* box-shadow: 0 0 5px #385170, 0 0 10px #385170, 0 0 20px #385170, 0 0 30px #385170, 0 0 40px #385170, 0 0 50px #385170, 0 0 60px #385170; */
+    /* animation: neon-effect 2s linear infinite; */
+}
+
+/* @keyframes neon-effect {
+    0% {
+        box-shadow: 0 0 5px #385170, 0 0 10px #385170, 0 0 20px #385170, 0 0 30px #385170, 0 0 40px #385170, 0 0 50px #385170, 0 0 60px #385170;
+    }
+
+    50% {
+        box-shadow: 0 0 5px #385170, 0 0 15px #385170, 0 0 30px #385170, 0 0 45px #385170, 0 0 60px #385170, 0 0 75px #385170, 0 0 90px #385170;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #385170, 0 0 10px #385170, 0 0 20px #385170, 0 0 30px #385170, 0 0 40px #385170, 0 0 50px #385170, 0 0 60px #385170;
+    }
+} */
+
+.cuatro {
+    font-family: Sniglet, sans-serif;
+    font-size: 50px;
+    color: #FF0000;
+
+}
+
+.error{
+    font-family: Sniglet, sans-serif;
+    color: #ececec;
+    font-size: 35px;
+}
+
+
+.textCntnr {
+    font-family: Sniglet, sans-serif;
+    color: #ececec;
+}
+
+.gif{
+    width: 300px;
+    border-radius: 20px;
+    /* border: 2px solid black; */
+}
+
+.btn {
+    font-family: Sniglet, sans-serif;
+    color: #ececec;
+    background-color: #385170;
+    border-radius: 50px;
+    border: none;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    animation: bounce 1s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+}
+
+.btn:hover {
+    cursor: pointer;
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+@-webkit-keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}

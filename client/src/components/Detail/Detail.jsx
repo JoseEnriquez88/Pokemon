@@ -36,14 +36,14 @@ const Detail = () => {
                             <div className={style.dataCntnr}>
                                 <div className={style.dataUno}>
                                     <p>Id: {id}</p>
-                                    <p>Height: {height}</p>
-                                    <p>Weight: {weight}</p>
                                     <p>Life: {life}</p>
                                     <p>Attack: {attack}</p>
-                                </div>
-                                <div className={style.dataDos}>
                                     <p>Defense: {defense}</p>
                                     <p>Speed: {speed}</p>
+                                </div>
+                                <div className={style.dataDos}>
+                                    <p>Height: {height}</p>
+                                    <p>Weight: {weight}</p>
                                     <p>Types:</p>
                                     {types.map((type) => (
                                         <p key={type}>{type}</p>
@@ -54,7 +54,7 @@ const Detail = () => {
                         </div>
                     </div>
                 ) : (
-                    <h2 className={style.loading}>Loading...</h2>
+                    <div className={style.loading}>Loading...</div>
                 )}
             </div>
         </div>
