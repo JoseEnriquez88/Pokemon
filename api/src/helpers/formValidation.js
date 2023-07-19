@@ -1,6 +1,6 @@
 //!Validaciones para el formulario de creacion de un pokemon.
 
-const nameRegex = /^[a-zA-Z\s]+$/;
+const nameRegex = /^[a-zA-Z0-9\s]+$/;
 const imageRegex = /^.+\.(jpeg|jpg|png)$/;
 const imageRegexURL = /(https?:\/\/.*\.(?:png|jpg|jpeg))/i;
 
@@ -16,9 +16,11 @@ const formValidation = (name, image, types, life, attack, defense, speed, height
       throw new Error(`${types} debe contener solo letras`);
    }
 
-   // Valido que las siguientes características sean números o decimales
-   if (isNaN(parseFloat(life)) || isNaN(parseFloat(attack)) || isNaN(parseFloat(defense)) || isNaN(parseFloat(speed)) || isNaN(parseFloat(height)) || isNaN(parseFloat(weight))) {
-      throw new Error('Vida, ataque, defensa, velocidad, peso o altura del pokemon deben ser valores numéricos o decimales');
+   //! Valido que las siguientes características sean números o decimales
+   // if (isNaN(parseFloat(life)) || isNaN(parseFloat(attack)) || isNaN(parseFloat(defense)) || isNaN(parseFloat(speed)) || isNaN(parseFloat(height)) || isNaN(parseFloat(weight))) {
+      // throw new Error('Vida, ataque, defensa, velocidad, peso o altura del pokemon deben ser valores numéricos o decimales');
+   if (isNaN(parseFloat(life)) || isNaN(parseFloat(attack)) || isNaN(parseFloat(defense))) {
+      throw new Error('Vida, ataque y defensa del pokemon deben ser valores numéricos o decimales');
    }
 };
 
