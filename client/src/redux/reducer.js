@@ -6,7 +6,7 @@ const initialState = {
     types: [], //para traer los tipos de la base de datos
     cleanPokemonDetail: null, //para borrar el detail
     message: '', // para el mensaje de error
-    filter: false //para el filtro 
+    filter: false, //para el filtro 
 };
 
 const reducer = (state = initialState, action) => { //action => type, payload
@@ -55,13 +55,13 @@ const reducer = (state = initialState, action) => { //action => type, payload
                 const apiPokemones = copia.filter(p => typeof p.id === 'number');
                 return {
                     ...state,
-                    pokemons: apiPokemones
+                    pokemons: apiPokemones,
                 }
             } else if (action.payload === 'db') {
                 const dbPokemones = copia.filter(p => typeof p.id === 'string');
                 return {
                     ...state,
-                    pokemons: dbPokemones
+                    pokemons: dbPokemones,
                 }
             } else if (action.payload === 'all') {
                 const allPokemons = [...state.copyPokemons];
@@ -101,7 +101,7 @@ const reducer = (state = initialState, action) => { //action => type, payload
             const sortPokemonByType = state.copyPokemons.filter(pokemon => pokemon.types.includes(action.payload));
             return {
                 ...state,
-                pokemons: sortPokemonByType
+                pokemons: sortPokemonByType,
             };
 
 
