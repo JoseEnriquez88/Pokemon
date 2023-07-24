@@ -34,7 +34,7 @@ const formValidation = (pokemon) => {
 
 
     // Valido que los tipos sean solo letras
-    if(pokemon.types === '') errors.types = 'Debe seleccionar al menos 1 tipo'; 
+    if(pokemon.types === '') errors.types = 'Debe seleccionar al menos 1 tipo y hasta máximo 2.'; 
 
     return errors;
 }
