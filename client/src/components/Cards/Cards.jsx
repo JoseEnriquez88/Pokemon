@@ -9,7 +9,7 @@ const Card = ({ name, id, image, height, weight, life, attack, defense, speed, t
       <h4 className={style.type}>Tipo: {types?.join(', ')}</h4>
       <h4 className={style.attack}>Ataque: {attack}</h4>
       <Link to={`/detail/${id}`}>
-        <button className={style.detailBtn}>Mas detalles</button>
+        <button className={style.detailBtn}>Detalles</button>
       </Link>
     </div>
   );

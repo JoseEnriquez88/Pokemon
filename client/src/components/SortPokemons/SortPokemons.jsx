@@ -67,7 +67,7 @@ const SortPokemons = () => {
 
   return (
     <div className={style.mainCntnr}>
-      <select className={style.select} defaultValue="" required onChange={handleAlphabeticSort}>
+      <select className={style.alfabetic} defaultValue="" required onChange={handleAlphabeticSort}>
         Alfabeticamente
         <option value="" disabled>Alfabeticamente</option>
         <option value="asc">Ascendente</option>
@@ -86,8 +86,8 @@ const SortPokemons = () => {
       <select className={style.attack} defaultValue="" required onChange={handleAttackSort}>
         Ataque
         <option value="" disabled>Ataque</option>
-        <option value="min">Min-max</option>
-        <option value="max">Max-min</option>
+        <option value="min">in-max</option>
+        <option value="max">ax-min</option>
       </select>
 
       {/* <select className={style.types} defaultValue="" required onChange={handleTypes}>

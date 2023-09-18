@@ -76,6 +76,7 @@
   border-radius: 50px;
   font-family: Sniglet, sans-serif;
   color: #ececec;
+  transition: color 0.3s ease;
 }
 
 .createBtn:disabled {
@@ -84,7 +85,9 @@
 
 .createBtn:hover,
 .goBackBtn:hover {
+  color: cornflowerblue;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .createBtn:disabled:hover {

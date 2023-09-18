@@ -62,7 +62,7 @@ const Home = () => {
         onSearch={onSearch}
         onLoadAllPokemons={loadAllPokemons}
       />
-      {/* <CardList pokemones={currentPokemones} /> */}
+      <CardList pokemones={currentPokemones} />
       <Pagination
         totalPages={Math.ceil(pokemones.length / itemsPerPage)}
         currentPage={currentPage}

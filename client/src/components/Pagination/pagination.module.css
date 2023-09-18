@@ -1,31 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
-
-/* .pageCntnr{ */
-
+.pageCntnr {
+    padding-bottom: 10px;
+}
 
 .pageCntnr button {
-    font-family: Sniglet, sans-serif;
-    font-size: 20px;
-    background-color: #385170;
-    color: #ececec;
-    border-radius: 20px;
-    transition: color 0.3s ease;
+  font-size: 20px;
+  background-color: #385170;
+  color: #ececec;
+  border-radius: 10px;
+  transition: color 0.3s ease;
 }
 
 .pageCntnr button:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.pageIndicator {
+  font-family: Sniglet, sans-serif;
+  font-size: 15px;
+  color: #385170;
+  padding: 5px;
 }
 
 .active-page {
-    background-color: red;
-    color: #fff;
+  background-color: red;
+  color: #fff;
 }
 
-.leftBtn, .rightBtn{
-    transform: translate(-1%, 10%);
+/* .leftBtn, .rightBtn */
+
+.leftBtn:hover,
+.rightBtn:hover {
+  color: cornflowerblue;
 }
 
-.leftBtn:hover, .rightBtn:hover{
-    color: cornflowerblue;
+.icon {
+  color: #fff;
+  text-decoration: none;
 }

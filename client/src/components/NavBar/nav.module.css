@@ -34,6 +34,7 @@
 .homeBtn:hover {
     cursor: pointer;
     color: cornflowerblue;
+    transition: color 0.3s ease;
 }
 
 .pokemon{
@@ -56,7 +57,8 @@
 
 .createBtn {
     background-color: transparent;
-    color: #385170;
+    /* color: #385170; */
+    color: #ececec;
     margin-right: -20px;
     border: none;
     border-radius: 10px;

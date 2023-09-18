@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 
-.select,
+.alfabetic,
 .origin,
 .attack,
 .types{
@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-.select:hover,
+.alfabetic:hover,
 .origin:hover,
 .attack:hover,
 .types:hover{
