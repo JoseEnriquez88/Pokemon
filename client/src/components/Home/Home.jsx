@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import style from './home.module.css'
+import pikachu from '../../assets/pikachuGif.gif';
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllPokemons,
@@ -57,19 +59,18 @@ const Home = () => {
 
   return (
     <div>
-      <NavBar
-        handleChange={handleChange}
-        onSearch={onSearch}
-        onLoadAllPokemons={loadAllPokemons}
-      />
-      <CardList pokemones={currentPokemones} />
-      <Pagination
-        totalPages={Math.ceil(pokemones.length / itemsPerPage)}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
+      <NavBar handleChange={handleChange} onSearch={onSearch} onLoadAllPokemons={loadAllPokemons} />
+      {currentPokemones.length === 0 ? ( // Verificar si no hay elementos en currentPokemones
+        <img src={pikachu} alt="pikaPika" className={style.loader} />
+      ) : (
+        <div>
+          <CardList pokemones={currentPokemones} />
+          <Pagination totalPages={Math.ceil(pokemones.length / itemsPerPage)} currentPage={currentPage} onPageChange={handlePageChange}/>
+        </div>
+      )}
     </div>
   );
+  
 };
 
 export default Home;

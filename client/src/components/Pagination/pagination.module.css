@@ -38,4 +38,10 @@
 .icon {
   color: #fff;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icon:hover{
+  color: cornflowerblue;
+  transition: color 0.3s ease;
 }

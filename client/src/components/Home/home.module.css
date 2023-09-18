@@ -1,53 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
-
-.container {
-    background-color: #ece8d9;
-    /* background-color: rgba(182, 168, 168, 0.3); */
-    border-radius: 50px;
-    border: 3px solid #494949;
-    width: 200px;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    /* padding: 10px; */
-}
-
-.container:hover {
-    transform: scale(1.15);
-    transition: transform 0.3s ease-in-out;
-    border-radius: 50px;
-    box-shadow:
-        0 15px 20px rgba(0, 0, 0, 0.9),
-        0 -2px 20px rgba(0, 0, 0, 0.9);
-    z-index: 1;
-}
-
-.container:not() {
-    filter: blur(3px);
-    transition: all 0.3s ease-in-out;
-}
-
-.img {
-    border-radius: 50px;
+ .loader{
     display: flex;
-    align-items: flex;
-    position: 0;
-    top: 0;
-    width: 200px;
-    height: 200px;
-    border-bottom: 3px solid #494949;
-}
-
-.name,
-.type {
-    width: 200px;
-    font-family: Sniglet, cursive;
-    color: #494949;
-}
-
-.detailBtn {
-    box-shadow:
-        0 15px 20px rgba(0, 0, 0, 0.9),
-        0 -2px 20px rgba(0, 0, 0, 0.9);
-    border: none;
-    cursor: pointer;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    padding-top: 250px;
+    padding-bottom: 250px;
+    max-width: 200px;
+    max-width: 150px;
 }

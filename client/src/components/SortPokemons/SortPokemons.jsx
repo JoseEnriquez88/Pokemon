@@ -1,7 +1,7 @@
+import style from './sortPokemons.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { apiDbFilter, getAllTypes, alphabeticSort, resetAlphabeticSort, sortByType, sortByAttack } from '../../redux/actions';
-import style from './sortPokemons.module.css';
 
 const SortPokemons = () => {
   const dispatch = useDispatch();
@@ -86,8 +86,8 @@ const SortPokemons = () => {
       <select className={style.attack} defaultValue="" required onChange={handleAttackSort}>
         Ataque
         <option value="" disabled>Ataque</option>
-        <option value="min">in-max</option>
-        <option value="max">ax-min</option>
+        <option value="min">Min-max</option>
+        <option value="max">Max-min</option>
       </select>
 
       {/* <select className={style.types} defaultValue="" required onChange={handleTypes}>

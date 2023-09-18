@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
 .mainCntnr {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    font-family: Sniglet, sans-serif;
-    color: #ececec;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-family: Sniglet, sans-serif;
+  color: #ececec;
 }
 
 .container {
-    width: 50rem;
-    margin: 4rem;
-    border-radius: 50px;
-    background-color: #142d4c;
-    /* background-color: #142d4c; */
-    /* box-shadow: 0 0 5px rgba(20, 45, 76, 0.8), 0 0 10px rgba(20, 45, 76, 0.8), 0 0 20px rgba(20, 45, 76, 0.8), 0 0 30px rgba(20, 45, 76, 0.8), 0 0 40px rgba(20, 45, 76, 0.8), 0 0 50px rgba(20, 45, 76, 0.8), 0 0 60px rgba(20, 45, 76, 0.8); */
-    /* animation: neon-effect 1s linear infinite; */
+  width: 50rem;
+  margin: 4rem;
+  border-radius: 50px;
+  background-color: #142d4c;
+  /* background-color: #142d4c; */
+  /* box-shadow: 0 0 5px rgba(20, 45, 76, 0.8), 0 0 10px rgba(20, 45, 76, 0.8), 0 0 20px rgba(20, 45, 76, 0.8), 0 0 30px rgba(20, 45, 76, 0.8), 0 0 40px rgba(20, 45, 76, 0.8), 0 0 50px rgba(20, 45, 76, 0.8), 0 0 60px rgba(20, 45, 76, 0.8); */
+  /* animation: neon-effect 1s linear infinite; */
 }
 
 /* .container h1:hover{
@@ -23,40 +23,41 @@
 } */
 
 .return {
-    text-decoration: none;
-    /* background-color: #385170; */
-    border-radius: 20px;
-    /* padding: 2px; */
-    font-size: 30px;
-    color: #ececec;
+  text-decoration: none;
+  /* background-color: #385170; */
+  border-radius: 20px;
+  /* padding: 2px; */
+  font-size: 30px;
+  color: #ececec;
 }
 
 .return:link,
 .return:visited {
-    color: #ececec;
+  color: #ececec;
 }
 
 .return:hover {
-    color: cornflowerblue;
-    cursor: pointer;
+  color: cornflowerblue;
+  cursor: pointer;
 }
 
 .imgCntnr img {
-    background-color: transparent;
-    max-width: 200px;
+  background-color: transparent;
+  max-width: 200px;
 }
 
 .dataUno p,
 .dataDos p {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .loading {
-    /* position: fixed; */
-    top: 50%;
-    left: 50%;
-    margin: 0 auto;
-    font-family: Sniglet, sans-serif;
-    font-size: 50px;
-    color: #142d4c;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  max-width: 200px;
+  max-width: 150px;
 }
