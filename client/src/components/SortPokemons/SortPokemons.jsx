@@ -37,7 +37,6 @@ const SortPokemons = () => {
   };
 
 
-
   // const handleSort = (event) => {
   //   const order = event.target.value === 'asc' ? 'asc' : 'desc';
   //   dispatch(alphabeticSort(order))
@@ -87,8 +86,8 @@ const SortPokemons = () => {
       <select className={style.attack} defaultValue="" required onChange={handleAttackSort}>
         Ataque
         <option value="" disabled>Ataque</option>
-        <option value="min">Menor a mayor</option>
-        <option value="max">Mayor a menor</option>
+        <option value="min">Min-max</option>
+        <option value="max">Max-min</option>
       </select>
 
       {/* <select className={style.types} defaultValue="" required onChange={handleTypes}>

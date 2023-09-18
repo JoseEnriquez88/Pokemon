@@ -1,24 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 
 .bar{
-    margin-bottom: -20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 1px;
+    /* margin: 0 auto; */
+    margin-right: -70px;
 }
 
-.bar input{
-    border-radius: 20px 0px 0px 20px;
-    padding: 10px;
+.input{
+    height: 20px;
+    width: 300px; 
+    border-radius: 50px 0px 0px 50px;
 }
 
 .btn{
+    display: flex;
+    justify-items: flex-end;
     font-family: Sniglet, cursive;
     background-color: #385170;
     color: #ececec;
     border-radius: 0px 20px 20px 0px;
     border: none;
-    padding: 11.7px 12px 11px 12px;
-
+    padding: px 5px px 5px;
+    transition: color 0.3s ease;
 }
 
 .btn:hover{
     cursor: pointer;
+    color: cornflowerblue;
+}
+
+.icon{
+    transform: translate(-10%, 10%);
 }

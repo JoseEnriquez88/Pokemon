@@ -9,7 +9,7 @@ const formValidation = (pokemon) => {
 
     // Valido que contenga nombre
     if (!nameRegex.test(pokemon.name) || pokemon.name === '') errors.name = 'Nombre del pokemon no puede estar vacío';
-    if(pokemon.name.length > 50) errors.name = 'El nombre del pokemon no puede tener mas de 50 caracteres';
+    if(pokemon.name.length > 50) errors.name = 'El nombre del pokemon no puede tener mas de 50 caracteres'
     
     // Valido que la imagen sea jpg, jpeg, png o url
     if (!imageRegex.test(pokemon.image) || !imageRegexURL.test(pokemon.image)) errors.image = 'La imagen debe ser una URL válida o tener un formato jpg, jpeg, png';

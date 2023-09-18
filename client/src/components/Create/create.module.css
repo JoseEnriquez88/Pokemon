@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
 .mainCntnr {
-    background-color: #212529;
-    border: 3px solid #385170;
-    border-radius: 50px;
-    width: 25%;
-    height: 100%;
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 50px;
-    font-family: 'Sniglet', cursive;
-    color: #fff;
+  background-color: #212529;
+  border: 3px solid #385170;
+  border-radius: 50px;
+  width: 25%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  font-family: "Sniglet", cursive;
+  color: #fff;
 }
 
 .nameCntnr,
@@ -21,11 +21,11 @@
 .speedCntnr,
 .heightCntnr,
 .weightCntnr {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 150px;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 150px;
+  gap: 5px;
 }
 
 .nameCntnr input,
@@ -36,65 +36,67 @@
 .speedCntnr input,
 .heightCntnr input,
 .weightCntnr input {
-    background-color: #385170;
-    border: none;
-    font-family: Sniglet, sans-serif;
-    color: #ececec;
+  background-color: #385170;
+  border: none;
+  font-family: Sniglet, sans-serif;
+  color: #ececec;
 }
 
 .typesCntnr p {
-    color: cornflowerblue;
+  color: cornflowerblue;
 }
 
 .checkTypes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkTypes label {
-    color: cornflowerblue;
+  color: cornflowerblue;
 }
 
 .checkTypes input:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btnCntnr {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
 }
 
 .createBtn,
 .goBackBtn {
-    background-color: #385170;
-    border: none;
-    border-radius: 50px;
-    font-family: Sniglet, sans-serif;
-    color: #ececec;
+  background-color: #385170;
+  border: none;
+  border-radius: 50px;
+  font-family: Sniglet, sans-serif;
+  color: #ececec;
 }
 
 .createBtn:disabled {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .createBtn:hover,
 .goBackBtn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .createBtn:disabled:hover {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .errors {
-    color: red;
-    font-size: 13px;
-    margin: 0 auto;
-    padding: 10px;
+  /* background-color: aqua; */
+  color: red;
+  font-size: 10px;
+  margin: 0 auto;
+  padding: 5px;
+  max-width: 100px;
+  height: 40px;
 }

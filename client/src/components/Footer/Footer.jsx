@@ -1,5 +1,6 @@
 import style from './footer.module.css'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
     return (
@@ -7,10 +8,10 @@ const Footer = () => {
             <p>©2023 Todos los derechos reservados. Desarrollado por Jose Enriquez.</p>
             <section className={style.section}>
                 <a href="https://github.com/JoseEnriquez88">
-                    <FaGithub />
+                    <GitHubIcon />
                 </a>
                 <a href="https://www.linkedin.com/in/joseenriquez80/">
-                    <FaLinkedin/>
+                    <LinkedInIcon/>
                 </a>
             </section>
         </footer>

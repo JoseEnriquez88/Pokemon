@@ -1,11 +1,11 @@
 import style from './searchbar.module.css';
-import { FaSearch } from 'react-icons/fa';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
 const SearchBar = ({ onSearch, handleChange }) => {
    return (
       <form className={style.bar}>
-         <input onChange={handleChange} placeholder='Buscar Pokemon' />
-         <button onClick={onSearch} className={style.btn}><FaSearch/></button>
+         <input onChange={handleChange} className={style.input} placeholder='Buscar Pokemon' title='Digite el nombre del pokemon para realizar la búsqueda'/>
+         <button onClick={onSearch} className={style.btn} title='Buscar'><SearchRoundedIcon className={style.icon}/></button>
       </form>
    );
 };

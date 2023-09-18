@@ -1,36 +1,34 @@
+import React from 'react';
 import style from './pagination.module.css';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
-const Pagination = ({ totalPages, currentPage, onPageChange }) => {
-  const pageNumbers = [];
-
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  if(totalPages < 1) return null;
 
   return (
-    <div className={style.pageCntnr}>
-      {/* Botón "Prev" */}
-      <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
-        anterior
+    <div className={style.pageCntnr}>{currentPage !== 1 && (
+      <button className={style.leftBtn} onClick={() => onPageChange(currentPage - 1)}>
+        <a className="page-link" href="#">
+          <ArrowLeftIcon />
+        </a>
       </button>
-
-      {/* Números de página */}
-      {pageNumbers.map((number) => (
+    )}
+      <span className="page-indicator">
+        {currentPage} de {totalPages}
+      </span>
+      {currentPage !== totalPages && (
         <button
-          key={number}
-          onClick={() => onPageChange(number)}
-          style={{ backgroundColor: currentPage === number ? 'red' : '#385170' }}
+          className="page-item"
+          onClick={() => onPageChange(currentPage + 1)}
         >
-          {number}
+          <a className="page-link" href="#">
+            <ArrowRightIcon />
+          </a>
         </button>
-      ))}
-
-      {/* Botón "Next" */}
-      <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-        siguiente
-      </button>
+      )}
     </div>
   );
-}
+};
 
 export default Pagination;

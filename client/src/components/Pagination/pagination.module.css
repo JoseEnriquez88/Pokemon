@@ -4,21 +4,28 @@
 /* .pageCntnr{ */
 
 
-.pageCntnr button{
+.pageCntnr button {
     font-family: Sniglet, sans-serif;
     font-size: 20px;
     background-color: #385170;
     color: #ececec;
     border-radius: 20px;
+    transition: color 0.3s ease;
 }
 
-.pageCntnr button:hover{
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
+.pageCntnr button:hover {
     cursor: pointer;
 }
 
 .active-page {
     background-color: red;
     color: #fff;
-  }
-  
+}
+
+.leftBtn, .rightBtn{
+    transform: translate(-1%, 10%);
+}
+
+.leftBtn:hover, .rightBtn:hover{
+    color: cornflowerblue;
+}

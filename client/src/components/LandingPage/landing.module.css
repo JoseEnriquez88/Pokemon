@@ -60,10 +60,16 @@
     border-radius: 50px;
     border: none;
     font-family: Sniglet, cursive;
+    font-size: 20px;
     color: #ececec;
+    transition: color 0.3s ease;
+}
+
+.start{
+    transform: translate(10%, 20%);
 }
 
 .btn:hover {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    color: cornflowerblue;
 }

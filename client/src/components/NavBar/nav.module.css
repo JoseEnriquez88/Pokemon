@@ -19,43 +19,51 @@
 }
 
 .homeBtn {
-    font-family: Sniglet, sans-serif;
-    background-color: #385170;
+    /* background-color: #385170; */
+    /* border-radius: 10px; */
+    /* padding: 10px; */
     border: none;
-    border-radius: 10px;
+    font-family: Sniglet, sans-serif;
+    background-color: transparent;
     color: #ececec;
-    font-size: 15px;
-    padding: 10px;
+    font-size: 20px;
+    margin-left: 40px;
+    transition: color 0.3s ease;
 }
 
 .homeBtn:hover {
     cursor: pointer;
+    color: cornflowerblue;
+}
+
+.pokemon{
+    transform: translate(-10%, 10%);
 }
 
 .sort {
-    margin-top: -25px;
+    margin-right: 500px;
+    margin-top: 5px;
+    /* margin: o auto; */
 }
 
-.sort p {
-    font-family: Sniglet, sans-serif;
-}
 
 .findOrCreate {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-right: 100px;
 }
 
 .createBtn {
-    margin-bottom: -20px;
-    font-family: Sniglet, sans-serif;
-    background-color: #385170;
+    background-color: transparent;
+    color: #385170;
+    margin-right: -20px;
     border: none;
     border-radius: 10px;
-    padding: 10px;
-    color: #ececec;
+    transition: color 0.3s ease; 
 }
 
-.createBtn:hover{
+.createBtn:hover {
     cursor: pointer;
+    color: cornflowerblue;
 }

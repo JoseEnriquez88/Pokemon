@@ -7,13 +7,13 @@
     border: 3px solid #9fd3c7;
     width: 200px;
     position: relative;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease;
     /* padding: 10px; */
 }
 
 .container:hover {
-    transform: scale(1.15);
-    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
     border-radius: 50px;
     box-shadow:
         0 15px 20px rgba(0, 0, 0, 0.9),

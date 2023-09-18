@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Carousel from '../Carousel/Carousel.jsx';
 import style from './landing.module.css';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 import charmander from '../../assets/landingPokemons/charmander.jpeg';
 import eevee from '../../assets/landingPokemons/eevee.jpeg';
@@ -34,7 +35,7 @@ const LandingPage = () => {
             <p className={style.txt}>En esta pagina puedes explorar una amplia variedad de pokemones y aprender datos interesantes sobre cada una de ellos.</p>
           </div>
           <Link to='/home'>
-            <button className={style.btn} >Ir a la pagina principal</button>
+            <button className={style.btn}>Comenzar <RocketLaunchIcon className={style.start}/></button>
           </Link>
         </div>
       </div>

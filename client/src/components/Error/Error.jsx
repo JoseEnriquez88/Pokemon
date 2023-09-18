@@ -1,5 +1,6 @@
 import style from './error.module.css';
 import { Link } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Error = () => {
     return (
@@ -13,7 +14,8 @@ const Error = () => {
                     <h2>La página que estas buscando no se encuentra en ninguna parte.</h2>
                 </div>
                 <Link to='/home'>
-                    <button className={style.btn}>volver a la pagina principal</button>
+                    
+                    <button className={style.btn}><ArrowBackIcon className={style.icon}/>Volver</button>
                 </Link>
             </div>
 

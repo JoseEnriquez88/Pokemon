@@ -4,13 +4,21 @@
 .origin,
 .attack,
 .types{
-    background-color: #385170;
-    border-radius: 25px;
+    background-color: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     color: #ececec;
     box-decoration-break: slice;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
+    /* margin: 0 auto; */
     font-family: Sniglet, cursive;
+    cursor: pointer;
+}
+
+.select:hover,
+.origin:hover,
+.attack:hover,
+.types:hover{
+    background-color: #142d4c;
     cursor: pointer;
 }

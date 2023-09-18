@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllPokemons, getPokemonsByName, cleanDetail, clearMessage } from '../../redux/actions';
-import NavBar from '../NavBar/NavBar';
-import CardList from '../CardList/CardList';
-import Pagination from '../Pagination/Pagination'; 
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getAllPokemons,
+  getPokemonsByName,
+  cleanDetail,
+  clearMessage,
+} from "../../redux/actions";
+import NavBar from "../NavBar/NavBar";
+import CardList from "../CardList/CardList";
+import Pagination from "../Pagination/Pagination";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const pokemones = useSelector((state) => state.pokemons);
   const messageError = useSelector((state) => state.message);
-  const itemsPerPage = 12; // Número de elementos por página
-  const [currentPage, setCurrentPage] = useState(1); // Página actual
+  const itemsPerPage = 12; 
+  const [currentPage, setCurrentPage] = useState(1); 
 
   const handleChange = (event) => {
     setName(event.target.value.toLowerCase());
@@ -24,7 +29,7 @@ const Home = () => {
 
   const loadAllPokemons = () => {
     dispatch(getAllPokemons());
-    setName('');
+    setName("");
   };
 
   const handlePageChange = (page) => {
@@ -35,7 +40,7 @@ const Home = () => {
     if (!pokemones.length) {
       dispatch(getAllPokemons());
     }
-    if (messageError !== '') {
+    if (messageError !== "") {
       alert(messageError);
       dispatch(clearMessage());
     }
@@ -52,9 +57,17 @@ const Home = () => {
 
   return (
     <div>
-      <NavBar handleChange={handleChange} onSearch={onSearch} onLoadAllPokemons={loadAllPokemons} />
-      <Pagination totalPages={Math.ceil(pokemones.length / itemsPerPage)} currentPage={currentPage} onPageChange={handlePageChange} />
-      <CardList pokemones={currentPokemones} />
+      <NavBar
+        handleChange={handleChange}
+        onSearch={onSearch}
+        onLoadAllPokemons={loadAllPokemons}
+      />
+      {/* <CardList pokemones={currentPokemones} /> */}
+      <Pagination
+        totalPages={Math.ceil(pokemones.length / itemsPerPage)}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 };
