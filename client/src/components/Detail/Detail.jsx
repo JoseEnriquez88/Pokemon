@@ -6,6 +6,7 @@ import { getPokemonById, cleanDetail } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import pikachu from "../../assets/pikachuGif.gif";
 import NavBar from "../NavBar/NavBar";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Detail = () => {
   const { id } = useParams();
@@ -31,31 +32,32 @@ const Detail = () => {
       <div className={style.mainCntnr}>
         {name ? (
           <div className={style.container}>
-            <h1>{name}</h1>
+            <h1 className={style.title}>{name}</h1>
+            
             <div className={style.imgDataCntnr}>
               <div className={style.imgCntnr}>
                 <img src={image} alt="img" />
+                <div className={style.dataCntnr}>
+                  <div className={style.dataUno}>
+                    <p>Id: {id}</p>
+                    <p>Life: {life}</p>
+                    <p>Attack: {attack}</p>
+                    <p>Defense: {defense}</p>
+                    <p>Speed: {speed}</p>
+                  </div>
+                  <div className={style.dataDos}>
+                    <p>Height: {height}</p>
+                    <p>Weight: {weight}</p>
+                    <p>Types:</p>
+                    {types.map((type) => (
+                      <p key={type}>{type}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <div className={style.dataCntnr}>
-                <div className={style.dataUno}>
-                  <p>Id: {id}</p>
-                  <p>Life: {life}</p>
-                  <p>Attack: {attack}</p>
-                  <p>Defense: {defense}</p>
-                  <p>Speed: {speed}</p>
-                </div>
-                <div className={style.dataDos}>
-                  <p>Height: {height}</p>
-                  <p>Weight: {weight}</p>
-                  <p>Types:</p>
-                  {types.map((type) => (
-                    <p key={type}>{type}</p>
-                  ))}
-                </div>
-              </div>
-              <Link to="/home" className={style.return}>
-                click para volver
+              <Link to="/home" className={style.return} title="Volver a inicio">
+                <ArrowBackIcon className={style.icon} /> volver
               </Link>
             </div>
           </div>

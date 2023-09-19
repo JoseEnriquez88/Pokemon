@@ -20,7 +20,6 @@ const LandingPage = () => {
     snorlax
   ];
 
-
   return (
     <div className={style.mainCntnr}>
       <h1 className={style.titulo}>¡Hola! Te damos la bienvenida a la página de pokemones</h1>

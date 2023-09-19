@@ -8,7 +8,6 @@ const SortPokemons = () => {
   const pokemons = useSelector(state => state.pokemons);
   const copyPokemons = useSelector(state => state.copyPokemons);
   const tipos = useSelector(state => state.types);
-  // console.log(tipos);
 
   const handleFilter = (event) => {
     const filterOrigin = event.target.value;
@@ -20,27 +19,19 @@ const SortPokemons = () => {
     let updatedPokemons = [];
 
     if (filterType === 'all') {
-      updatedPokemons = copyPokemons; // Restaura todos los pokemones desde el estado de Redux
+      updatedPokemons = copyPokemons; 
     } else {
-      const selectedTypes = event.target.selectedOptions; // Obtiene las opciones seleccionadas
-      const types = Array.from(selectedTypes).map(option => option.value); // Obtiene los valores de las opciones seleccionadas
-
+      const selectedTypes = event.target.selectedOptions; 
+      const types = Array.from(selectedTypes).map(option => option.value); 
       updatedPokemons = copyPokemons.filter(pokemon => types.every(type => pokemon.types.includes(type)));
-      // Filtra los pokemones según los tipos seleccionados
     }
 
     if (updatedPokemons.length === 0) {
       alert(`No se encontraron pokemones con los tipos seleccionados`);
     }
 
-    dispatch(sortByType(filterType)); // Actualiza el estado con el tipo seleccionado
+    dispatch(sortByType(filterType)); 
   };
-
-
-  // const handleSort = (event) => {
-  //   const order = event.target.value === 'asc' ? 'asc' : 'desc';
-  //   dispatch(alphabeticSort(order))
-  // };
 
   const handleAlphabeticSort = (event) => {
     const order = event.target.value;
@@ -90,12 +81,6 @@ const SortPokemons = () => {
         <option value="max">Max-min</option>
       </select>
 
-      {/* <select className={style.types} defaultValue="" required onChange={handleTypes}>
-        <option value="" disabled>Tipos</option>
-        {tipos.map((type) => (
-          <option value={type} key={type}>{type}</option>
-        ))}
-      </select> */}
       <select className={style.types} defaultValue="" required name="types" id="types" onChange={handleTypes}>
         Tipos
         <option value="" disabled>Tipos</option>
