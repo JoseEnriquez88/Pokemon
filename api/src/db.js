@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
 const { Sequelize } = require('sequelize');
 
 const fs = require('fs');
@@ -15,6 +15,8 @@ const sequelize = new Sequelize(
       }
    }
 );
+
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
