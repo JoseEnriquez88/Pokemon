@@ -15,7 +15,7 @@ const Error = () => {
                 </div>
                 <Link to='/home'>
                     
-                    <button className={style.btn}><ArrowBackIcon className={style.icon}/>Volver</button>
+                    <button className={style.btn} title='Volver a inicio'><ArrowBackIcon className={style.icon}/>Volver</button>
                 </Link>
             </div>
 
