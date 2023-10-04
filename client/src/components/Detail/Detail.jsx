@@ -57,7 +57,7 @@ const Detail = () => {
               </div>
 
               <Link to="/home" className={style.return} title="Volver a inicio">
-                <ArrowBackIcon className={style.icon} /> volver
+                <ArrowBackIcon className={style.icon} />
               </Link>
             </div>
           </div>

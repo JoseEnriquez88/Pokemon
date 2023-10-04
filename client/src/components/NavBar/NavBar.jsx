@@ -12,7 +12,6 @@ const Nav = ({ onSearch, handleChange, onLoadAllPokemons }) => {
             <div className={style.cntnr}>
                 <button onClick={onLoadAllPokemons} className={style.homeBtn} title='Resetear Pokemones'><CatchingPokemonIcon className={style.pokemon}/>Pokemon</button>
                 <div className={style.sort}>
-                    {/* <p>Ordenar por:</p> */}
                     <SortPokemons />
                 </div>
                 <div className={style.findOrCreate}>
