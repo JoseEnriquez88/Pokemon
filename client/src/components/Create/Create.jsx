@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { createPokemon } from "../../redux/actions";
 import formValidation from "../../utils/formValidation";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Create = () => {
   const dispatch = useDispatch();
@@ -198,7 +199,7 @@ const Create = () => {
           Crear
         </button>
         <Link to="/home">
-          <button className={style.goBackBtn}>Volver</button>
+          <button className={style.goBackBtn}><ArrowBackIcon/></button>
         </Link>
       </div>
     </form>

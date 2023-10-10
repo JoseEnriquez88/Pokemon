@@ -73,7 +73,7 @@
 .goBackBtn {
   background-color: #385170;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   font-family: Sniglet, sans-serif;
   color: #ececec;
   transition: color 0.3s ease;
