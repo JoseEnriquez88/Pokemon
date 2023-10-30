@@ -15,12 +15,12 @@ import {
 } from "./action-types";
 
 const initialState = {
-  pokemons: [], //todos lo pokemones
-  copyPokemons: [], //copia de todos los pokemones
-  types: [], //para traer los tipos de la base de datos
-  cleanPokemonDetail: null, //para borrar el detail
-  message: "", // para el mensaje de error
-  filter: false, //para el filtro
+  pokemons: [],
+  copyPokemons: [],
+  types: [],
+  cleanPokemonDetail: null,
+  message: "",
+  filter: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -30,7 +30,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.payload,
-        copyPokemons: [...action.payload], //copia de los pokemones
+        copyPokemons: [...action.payload],
       };
 
     case GET_POKEMONS_BY_NAME:
@@ -51,7 +51,7 @@ const reducer = (state = initialState, action) => {
         types: action.payload,
       };
 
-    case POST_POKEMON: //para crear el pokemon
+    case POST_POKEMON:
       return {
         ...state,
         pokemons: [...state.pokemons, action.payload],
@@ -104,13 +104,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         pokemons: [...state.copyPokemons],
       };
-
-    // case SORT_BY_TYPE:
-    //     const sortPokemonByType = state.pokemons.filter(pokemon => pokemon.types.includes(action.payload));
-    //     return {
-    //         ...state,
-    //         pokemons: sortPokemonByType
-    //     }
 
     case SORT_BY_TYPE:
       const sortPokemonByType = state.copyPokemons.filter((pokemon) =>
