@@ -1,11 +1,11 @@
-const { Pokemon, Type } = require('../db.js');
+const { Pokemon, Type } = require("../db.js");
 
 const getPokemonDB = async () => {
   const allPokemons = await Pokemon.findAll({
     include: [
       {
         model: Type,
-        attributes: ['name'], // Obtener solo el atributo 'name' del modelo Type
+        attributes: ["name"], // Obtener solo el atributo 'name' del modelo Type
         through: { attributes: [] }, // Omitir las columnas de la tabla intermedia entre Pokemon y Type
       },
     ],
