@@ -5,8 +5,8 @@ const getPokemonDB = async () => {
     include: [
       {
         model: Type,
-        attributes: ["name"], // Obtener solo el atributo 'name' del modelo Type
-        through: { attributes: [] }, // Omitir las columnas de la tabla intermedia entre Pokemon y Type
+        attributes: ["name"],
+        through: { attributes: [] },
       },
     ],
   });
@@ -22,7 +22,7 @@ const getPokemonDB = async () => {
       speed: pokemon.speed,
       height: pokemon.height,
       weight: pokemon.weight,
-      types: pokemon.Types.map((type) => type.name), // Obtener solo los nombres de los tipos
+      types: pokemon.Types.map((type) => type.name),
     };
   });
 };
