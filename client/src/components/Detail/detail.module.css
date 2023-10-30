@@ -10,14 +10,25 @@
 
 .container {
   width: 50rem;
+  height: 30rem;
   margin: 4rem;
-  border-radius: 50px;
+  border-radius: 20px;
   background-color: #142d4c;
 }
 
+.titleCntnr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin-right: 40%;
+}
+
 .return {
+  margin-top: 1.6rem;
+  margin-left: 2%;
   text-decoration: none;
-  border-radius: 20px;
   font-size: 30px;
   color: #ececec;
   transition: color 0.3s ease;
@@ -34,14 +45,31 @@
   transition: color 0.3s ease;
 }
 
+.imgDataCntnr {
+  display: flex;
+  justify-content: space-between;
+}
+
 .imgCntnr img {
   background-color: transparent;
-  max-width: 200px;
+  max-width: 15rem;
+  margin-top: 30px;
+  margin-left: 40%;
+}
+
+.dataCntnr {
+  display: flex;
+  justify-content: space-between;
+  max-width: 40%;
+  margin-right: 15%;
+  margin-top: 30px;
+  gap: 2rem;
+  letter-spacing: 1px;
 }
 
 .dataUno p,
 .dataDos p {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .loading {

@@ -3,7 +3,7 @@
 .container {
   background-color: #142d4c;
   /* background-color: rgba(182, 168, 168, 0.3); */
-  border-radius: 50px;
+  border-radius: 20px;
   border: 3px solid #9fd3c7;
   width: 200px;
   position: relative;
@@ -14,7 +14,7 @@
 .container:hover {
   transform: scale(1.01);
   transition: transform 0.3s ease;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.9), 0 -2px 20px rgba(0, 0, 0, 0.9);
   z-index: 1;
 }
@@ -46,7 +46,7 @@
 .detailBtn {
   background-color: #385170;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   padding: 5px;
   cursor: pointer;
   margin-bottom: 10px;

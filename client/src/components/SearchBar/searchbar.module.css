@@ -9,6 +9,7 @@
 }
 
 .input {
+  padding-left: 7px;
   height: 20px;
   width: 300px;
   border-radius: 20px 0px 0px 20px;

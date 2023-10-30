@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={style.footer}>
       <p>
-        ©2023 Todos los derechos reservados. Desarrollado por Jose Enriquez.
+        © 2023 Copyright: <b>Jose Enriquez</b>
       </p>
       <section className={style.section}>
         <a href="https://github.com/JoseEnriquez88" title="Ir a Github">

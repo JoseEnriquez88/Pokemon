@@ -32,33 +32,34 @@ const Detail = () => {
       <div className={style.mainCntnr}>
         {name ? (
           <div className={style.container}>
-            <h1 className={style.title}>{name}</h1>
+            <div className={style.titleCntnr}>
+              <Link to="/home" className={style.return} title="Volver a inicio">
+                <ArrowBackIcon className={style.icon} />
+              </Link>
+              <h1 className={style.title}>{name}</h1>
+            </div>
 
             <div className={style.imgDataCntnr}>
               <div className={style.imgCntnr}>
                 <img src={image} alt="img" />
-                <div className={style.dataCntnr}>
-                  <div className={style.dataUno}>
-                    <p>Id: {id}</p>
-                    <p>Life: {life}</p>
-                    <p>Attack: {attack}</p>
-                    <p>Defense: {defense}</p>
-                    <p>Speed: {speed}</p>
-                  </div>
-                  <div className={style.dataDos}>
-                    <p>Height: {height}</p>
-                    <p>Weight: {weight}</p>
-                    <p>Types:</p>
-                    {types.map((type) => (
-                      <p key={type}>{type}</p>
-                    ))}
-                  </div>
+              </div>
+              <div className={style.dataCntnr}>
+                <div className={style.dataUno}>
+                  <h3>Id: {id}</h3>
+                  <h3>Life: {life}</h3>
+                  <h3>Attack: {attack}</h3>
+                  <h3>Defense: {defense}</h3>
+                  <h3>Speed: {speed}</h3>
+                </div>
+                <div className={style.dataDos}>
+                  <h3>Height: {height}</h3>
+                  <h3>Weight: {weight}</h3>
+                  <h3>Types:</h3>
+                  {types.map((type) => (
+                    <p key={type}>{type}</p>
+                  ))}
                 </div>
               </div>
-
-              <Link to="/home" className={style.return} title="Volver a inicio">
-                <ArrowBackIcon className={style.icon} />
-              </Link>
             </div>
           </div>
         ) : (
