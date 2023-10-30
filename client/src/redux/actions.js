@@ -51,8 +51,6 @@ export const getPokemonsByName = (name) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(`${URL}?name=${name}`);
-      // if(!data.find((pokemon) => pokemon.name === name)) throw new Error(`no se encontró el pokemon con el nombre: ${name}`);
-
       const pokemonFound = data.map((pokemon) => ({
         name: pokemon.name,
         id: pokemon.id,
