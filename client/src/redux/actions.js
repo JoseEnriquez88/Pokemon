@@ -16,10 +16,10 @@ import {
 import axios from "axios";
 
 export const getAllPokemons = () => {
-  const endpoint = "/pokemons";
+  const endpointPokemons = "/pokemons";
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(endpoint);
+      const { data } = await axios.get(endpointPokemons);
       if (!data || data.length === 0)
         throw new Error("No se encuentran pokemones para mostrar");
 
@@ -47,10 +47,10 @@ export const getAllPokemons = () => {
 };
 
 export const getPokemonsByName = (name) => {
-  const URL = "/name";
+  const endpointName = "/name";
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`${URL}?name=${name}`);
+      const { data } = await axios.get(`${endpointName}?name=${name}`);
       const pokemonFound = data.map((pokemon) => ({
         name: pokemon.name,
         id: pokemon.id,
@@ -74,10 +74,10 @@ export const getPokemonsByName = (name) => {
 };
 
 export const getPokemonById = (id) => {
-  const endpoint = "/pokemons";
+  const endpointID = "/pokemons";
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`${endpoint}/${id}`);
+      const { data } = await axios.get(`${endpointID}/${id}`);
       if (!data) throw new Error(`No se encontró el pokemon con el id: ${id}`);
 
       const pokemon = {
@@ -107,10 +107,10 @@ export const getPokemonById = (id) => {
 };
 
 export const getAllTypes = () => {
-  const endpoint = "/types-db";
+  const endpointTypes = "/types-db";
   return async (dispatch) => {
     try {
-      const { data } = await axios(endpoint);
+      const { data } = await axios(endpointTypes);
       if (!data || data.length === 0)
         throw new Error("No se encuentran tipos en la base de datos");
 
@@ -131,10 +131,10 @@ export const getAllTypes = () => {
 };
 
 export const createPokemon = (pokemonCreado) => {
-  const endpoint = "/pokemons";
+  const endpointCreate = "/pokemons";
   return async (dispatch) => {
     try {
-      const response = await axios.post(endpoint, pokemonCreado);
+      const response = await axios.post(endpointCreate, pokemonCreado);
       const createdPokemon = response.data;
 
       dispatch({
