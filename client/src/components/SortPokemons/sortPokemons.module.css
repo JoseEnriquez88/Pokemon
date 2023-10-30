@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
 .alfabetic,
 .origin,
 .attack,
-.types{
-    background-color: transparent;
-    border: none;
-    font-size: 15px;
-    color: #ececec;
-    box-decoration-break: slice;
-    /* margin-right: 1rem; */
-    /* margin: 0 auto; */
-    font-family: Sniglet, cursive;
-    cursor: pointer;
+.types {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  color: #ececec;
+  box-decoration-break: slice;
+  /* margin-right: 1rem; */
+  /* margin: 0 auto; */
+  font-family: Sniglet, cursive;
+  cursor: pointer;
 }
 
 .alfabetic:hover,
 .origin:hover,
 .attack:hover,
-.types:hover{
-    background-color: #142d4c;
-    cursor: pointer;
+.types:hover {
+  background-color: #142d4c;
+  cursor: pointer;
 }

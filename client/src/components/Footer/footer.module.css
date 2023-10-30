@@ -1,27 +1,27 @@
 .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #142d4c;
-    padding: 4rem;
-    color: #ececec;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #142d4c;
+  padding: 4rem;
+  color: #ececec;
 }
 
 .footer p {
-    margin: 0;
+  margin: 0;
 }
 
 .section {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .section a {
-    transition: color 0.3s ease;
-    color: #fff;
-    text-decoration: none;
+  transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
 }
 
 .section a:hover {
-    color: cornflowerblue;
+  color: cornflowerblue;
 }

@@ -1,11 +1,22 @@
-import style from './cardlist.module.css';
-import Cards from '../Cards/Cards';
+import style from "./cardlist.module.css";
+import Cards from "../Cards/Cards";
 
 const CardList = ({ pokemones }) => {
   return (
     <div className={style.cards}>
-      {
-        pokemones.map(({ name, id, image, height, weight, life, attack, defense, speed, types }) => {
+      {pokemones.map(
+        ({
+          name,
+          id,
+          image,
+          height,
+          weight,
+          life,
+          attack,
+          defense,
+          speed,
+          types,
+        }) => {
           return (
             <Cards
               key={id}
@@ -20,12 +31,11 @@ const CardList = ({ pokemones }) => {
               speed={speed}
               types={types}
             />
-          )
-        })
-      }
+          );
+        }
+      )}
     </div>
-  )
+  );
 };
 
 export default CardList;
-

@@ -1,75 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
 .mainCntnr {
-    display: flex;
-    flex-direction: column;
-    background-color: #142d4c;
-    margin: 0 auto;
-    width: 60%;
-    padding: 5px;
-    border: 3px solid #385170;
-    border-radius: 20px;
-    margin-top: 2rem;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #142d4c;
+  margin: 0 auto;
+  width: 60%;
+  padding: 5px;
+  border: 3px solid #385170;
+  border-radius: 20px;
+  margin-top: 2rem;
+  margin-bottom: 20px;
 }
 
 .mainCntnr:hover {
-    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
 }
 
 .titulo {
-    font-family: Sniglet, cursive;
-    color: #ececec;
-    text-align: center;
-    margin-top: 10px;
+  font-family: Sniglet, cursive;
+  color: #ececec;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .subContainer {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .minorContainer {
-    /* background-color: red; */
-    margin-top: 5rem;
-    width: 450px;
-    height: 150px;
+  /* background-color: red; */
+  margin-top: 5rem;
+  width: 450px;
+  height: 150px;
 }
 
 .carouselContainer {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .txtContainer {
-    /* background-color: black; */
-    width: 300px;
-    height: 150px;
-    margin: 0 auto;
+  /* background-color: black; */
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
 }
 
 .txt {
-    font-family: 'Sniglet', cursive;
-    font-size: 20px;
-    color: #ececec;
+  font-family: "Sniglet", cursive;
+  font-size: 20px;
+  color: #ececec;
 }
 
 .btn {
-    background-color: #385170;
-    padding: 10px;
-    border-radius: 50px;
-    border: none;
-    font-family: Sniglet, cursive;
-    font-size: 20px;
-    color: #ececec;
-    transition: color 0.3s ease;
+  background-color: #385170;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  font-family: Sniglet, cursive;
+  font-size: 20px;
+  color: #ececec;
+  transition: color 0.3s ease;
 }
 
-.start{
-    transform: translate(10%, 20%);
+.start {
+  transform: translate(10%, 20%);
 }
 
 .btn:hover {
-    cursor: pointer;
-    color: cornflowerblue;
+  cursor: pointer;
+  color: cornflowerblue;
 }

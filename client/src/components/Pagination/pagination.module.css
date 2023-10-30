@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
 .pageCntnr {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .pageCntnr button {
@@ -41,7 +41,7 @@
   transition: color 0.3s ease;
 }
 
-.icon:hover{
+.icon:hover {
   color: cornflowerblue;
   transition: color 0.3s ease;
 }

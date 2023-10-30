@@ -33,7 +33,7 @@ const Detail = () => {
         {name ? (
           <div className={style.container}>
             <h1 className={style.title}>{name}</h1>
-            
+
             <div className={style.imgDataCntnr}>
               <div className={style.imgCntnr}>
                 <img src={image} alt="img" />

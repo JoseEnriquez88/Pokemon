@@ -1,68 +1,68 @@
 /* color: #212529; color para la navbar */
 
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #142d4c;
-    color: #ececec;
-    padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #142d4c;
+  color: #ececec;
+  padding: 1em;
 }
 
 .cntnr {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .homeBtn {
-    /* background-color: #385170; */
-    /* border-radius: 10px; */
-    /* padding: 10px; */
-    border: none;
-    font-family: Sniglet, sans-serif;
-    background-color: transparent;
-    color: #ececec;
-    font-size: 20px;
-    margin-left: 40px;
-    transition: color 0.3s ease;
+  /* background-color: #385170; */
+  /* border-radius: 10px; */
+  /* padding: 10px; */
+  border: none;
+  font-family: Sniglet, sans-serif;
+  background-color: transparent;
+  color: #ececec;
+  font-size: 20px;
+  margin-left: 40px;
+  transition: color 0.3s ease;
 }
 
 .homeBtn:hover {
-    cursor: pointer;
-    color: cornflowerblue;
-    transition: color 0.3s ease;
+  cursor: pointer;
+  color: cornflowerblue;
+  transition: color 0.3s ease;
 }
 
-.pokemon{
-    transform: translate(-10%, 10%);
+.pokemon {
+  transform: translate(-10%, 10%);
 }
 
 .sort {
-    margin-right: 500px;
-    margin-top: 5px;
+  margin-right: 500px;
+  margin-top: 5px;
 }
 
 .findOrCreate {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-right: 100px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-right: 100px;
 }
 
 .createBtn {
-    background-color: transparent;
-    color: #ececec;
-    margin-right: -20px;
-    border: none;
-    border-radius: 10px;
-    transition: color 0.3s ease; 
+  background-color: transparent;
+  color: #ececec;
+  margin-right: -20px;
+  border: none;
+  border-radius: 10px;
+  transition: color 0.3s ease;
 }
 
 .createBtn:hover {
-    cursor: pointer;
-    color: cornflowerblue;
+  cursor: pointer;
+  color: cornflowerblue;
 }

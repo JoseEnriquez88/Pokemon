@@ -1,13 +1,20 @@
-import style from './sortPokemons.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { apiDbFilter, getAllTypes, alphabeticSort, resetAlphabeticSort, sortByType, sortByAttack } from '../../redux/actions';
+import style from "./sortPokemons.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import {
+  apiDbFilter,
+  getAllTypes,
+  alphabeticSort,
+  resetAlphabeticSort,
+  sortByType,
+  sortByAttack,
+} from "../../redux/actions";
 
 const SortPokemons = () => {
   const dispatch = useDispatch();
-  const pokemons = useSelector(state => state.pokemons);
-  const copyPokemons = useSelector(state => state.copyPokemons);
-  const tipos = useSelector(state => state.types);
+  const pokemons = useSelector((state) => state.pokemons);
+  const copyPokemons = useSelector((state) => state.copyPokemons);
+  const tipos = useSelector((state) => state.types);
 
   const handleFilter = (event) => {
     const filterOrigin = event.target.value;
@@ -18,27 +25,29 @@ const SortPokemons = () => {
     const filterType = event.target.value;
     let updatedPokemons = [];
 
-    if (filterType === 'all') {
-      updatedPokemons = copyPokemons; 
+    if (filterType === "all") {
+      updatedPokemons = copyPokemons;
     } else {
-      const selectedTypes = event.target.selectedOptions; 
-      const types = Array.from(selectedTypes).map(option => option.value); 
-      updatedPokemons = copyPokemons.filter(pokemon => types.every(type => pokemon.types.includes(type)));
+      const selectedTypes = event.target.selectedOptions;
+      const types = Array.from(selectedTypes).map((option) => option.value);
+      updatedPokemons = copyPokemons.filter((pokemon) =>
+        types.every((type) => pokemon.types.includes(type))
+      );
     }
 
     if (updatedPokemons.length === 0) {
       alert(`No se encontraron pokemones con los tipos seleccionados`);
     }
 
-    dispatch(sortByType(filterType)); 
+    dispatch(sortByType(filterType));
   };
 
   const handleAlphabeticSort = (event) => {
     const order = event.target.value;
-    if (order === 'reset') {
+    if (order === "reset") {
       dispatch(resetAlphabeticSort());
     } else {
-      dispatch(alphabeticSort(order))
+      dispatch(alphabeticSort(order));
     }
   };
 
@@ -54,36 +63,68 @@ const SortPokemons = () => {
   useEffect(() => {
     dispatch(getAllTypes());
     dispatch(sortByType());
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <div className={style.mainCntnr}>
-      <select className={style.alfabetic} defaultValue="" required onChange={handleAlphabeticSort}>
+      <select
+        className={style.alfabetic}
+        defaultValue=""
+        required
+        onChange={handleAlphabeticSort}
+      >
         Alfabeticamente
-        <option value="" disabled>Alfabeticamente</option>
+        <option value="" disabled>
+          Alfabeticamente
+        </option>
         <option value="asc">Ascendente</option>
         <option value="desc">Descendente</option>
         <option value="reset">Resetear</option>
       </select>
 
-      <select className={style.origin} defaultValue="" required onChange={handleFilter}>
+      <select
+        className={style.origin}
+        defaultValue=""
+        required
+        onChange={handleFilter}
+      >
         Origen
-        <option value="" disabled>Origen</option>
-        <option value="all" pokemons={pokemons}>Todos</option>
+        <option value="" disabled>
+          Origen
+        </option>
+        <option value="all" pokemons={pokemons}>
+          Todos
+        </option>
         <option value="api">Nativos</option>
         <option value="db">Creados</option>
       </select>
 
-      <select className={style.attack} defaultValue="" required onChange={handleAttackSort}>
+      <select
+        className={style.attack}
+        defaultValue=""
+        required
+        onChange={handleAttackSort}
+      >
         Ataque
-        <option value="" disabled>Ataque</option>
+        <option value="" disabled>
+          Ataque
+        </option>
         <option value="min">Min-max</option>
         <option value="max">Max-min</option>
       </select>
 
-      <select className={style.types} defaultValue="" required name="types" id="types" onChange={handleTypes}>
+      <select
+        className={style.types}
+        defaultValue=""
+        required
+        name="types"
+        id="types"
+        onChange={handleTypes}
+      >
         Tipos
-        <option value="" disabled>Tipos</option>
+        <option value="" disabled>
+          Tipos
+        </option>
         {tipos.map((type) => (
           <option key={type.name} value={type.name}>
             {type.name}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import style from './home.module.css'
-import pikachu from '../../assets/pikachuGif.gif';
+import style from "./home.module.css";
+import pikachu from "../../assets/pikachuGif.gif";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllPokemons,
@@ -17,8 +17,8 @@ const Home = () => {
   const [name, setName] = useState("");
   const pokemones = useSelector((state) => state.pokemons);
   const messageError = useSelector((state) => state.message);
-  const itemsPerPage = 12; 
-  const [currentPage, setCurrentPage] = useState(1); 
+  const itemsPerPage = 12;
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleChange = (event) => {
     setName(event.target.value.toLowerCase());
@@ -59,18 +59,25 @@ const Home = () => {
 
   return (
     <div>
-      <NavBar handleChange={handleChange} onSearch={onSearch} onLoadAllPokemons={loadAllPokemons} />
+      <NavBar
+        handleChange={handleChange}
+        onSearch={onSearch}
+        onLoadAllPokemons={loadAllPokemons}
+      />
       {currentPokemones.length === 0 ? ( // Verificar si no hay elementos en currentPokemones
         <img src={pikachu} alt="pikaPika" className={style.loader} />
       ) : (
         <div>
           <CardList pokemones={currentPokemones} />
-          <Pagination totalPages={Math.ceil(pokemones.length / itemsPerPage)} currentPage={currentPage} onPageChange={handlePageChange}/>
+          <Pagination
+            totalPages={Math.ceil(pokemones.length / itemsPerPage)}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
         </div>
       )}
     </div>
   );
-  
 };
 
 export default Home;
