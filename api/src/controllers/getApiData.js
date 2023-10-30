@@ -1,4 +1,3 @@
-//Este componente trae todos los pokemones de la API
 const axios = require("axios");
 const URL = "https://pokeapi.co/api/v2/pokemon";
 
@@ -7,13 +6,6 @@ const getApiData = async (limit) => {
   const apiPokemons = await Promise.all(
     response.map(async (pokemon) => {
       const pokemonData = (await axios(pokemon.url)).data;
-
-      // const stats = pokemonData.stats;
-      // const life = stats[0].base_stats;
-      // const attack = stats[1].base_stats;
-      // const defense = stats[2].base_stats;
-      // const speed = stats[5].base_stats;
-
       const types = pokemonData.types.map((type) => type.type.name);
 
       return {
