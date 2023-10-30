@@ -1,5 +1,5 @@
 import "./App.css";
-import axios from 'axios';
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Home from "./components/Home/Home";
@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Detail from "./components/Detail/Detail";
 import Error from "./components/Error/Error";
 
-axios.defaults.baseURL= 'pokemon-production-59d7.up.railway.app';
+axios.defaults.baseURL = "https://pokemon-production-59d7.up.railway.app/";
 
 function App() {
   return (
