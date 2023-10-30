@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Detail from "./components/Detail/Detail";
 import Error from "./components/Error/Error";
 
-axios.defaults.baseURL= 'pokemon-production-59d7.up.railway.app';
+axios.defaults.baseURL= 'pokemon-production-59d7.up.railway.app/';
 
 function App() {
   return (
