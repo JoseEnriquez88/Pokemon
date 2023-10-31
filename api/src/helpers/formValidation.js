@@ -1,5 +1,3 @@
-//!Validaciones para el formulario de creacion de un pokemon.
-
 const nameRegex = /^[a-zA-Z0-9\s]+$/;
 const imageRegex = /^.+\.(jpeg|jpg|png)$/;
 const imageRegexURL = /(https?:\/\/.*\.(?:png|jpg|jpeg))/i;
