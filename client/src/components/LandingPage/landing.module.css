@@ -31,7 +31,6 @@
 }
 
 .minorContainer {
-  /* background-color: red; */
   margin-top: 5rem;
   width: 450px;
   height: 150px;
@@ -42,7 +41,6 @@
 }
 
 .txtContainer {
-  /* background-color: black; */
   width: 300px;
   height: 150px;
   margin: 0 auto;
