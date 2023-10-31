@@ -53,14 +53,14 @@
 }
 
 .btn {
-  background-color: #385170;
+  background-color: transparent;
+  border-radius: 10px;
   padding: 10px;
-  border-radius: 20px;
   border: none;
   font-family: Sniglet, cursive;
   font-size: 20px;
   color: #ececec;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .start {
@@ -69,5 +69,8 @@
 
 .btn:hover {
   cursor: pointer;
-  color: cornflowerblue;
+  background-color: #385170;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  /* color: cornflowerblue; */
 }

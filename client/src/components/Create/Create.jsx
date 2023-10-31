@@ -105,10 +105,17 @@ const Create = () => {
 
   return (
     <form onSubmit={handleSubmit} className={style.mainCntnr}>
-      <h1>Crea tu pokemon</h1>
+      <div className={style.titleCntnr}>
+        <Link to="/home" className={style.return}>
+          <button className={style.returnBtn} title="Volver al inicio">
+            <ArrowBackIcon className={style.icon}/>
+          </button>
+        </Link>
+        <h1 className={style.title}>Crea tu pokemon</h1>
+      </div>
 
       <div className={style.inputCntnr}>
-        <div className={style.primerSubCntnr}>
+        <div className={style.firstSubCntnr}>
           {/* Div para el nombre */}
           <div className={style.nameCntnr}>
             <label htmlFor="name">Nombre:</label>
@@ -138,7 +145,7 @@ const Create = () => {
           </div>
         </div>
 
-        <div className={style.segundoSubCntnr}>
+        <div className={style.secondSubCntnr}>
           {/* Div para defensa */}
           <div className={style.defenseCntnr}>
             <label htmlFor="defense">Defensa:</label>
@@ -168,8 +175,9 @@ const Create = () => {
 
       {/* Div para los tipos */}
       <div className={style.typesCntnr}>
-        <label htmlFor="types">Tipos:</label>
-        <p>Elija 2 tipos</p>
+        <label htmlFor="types" className={style.typesLabel}>
+          Tipos: Elija 1 o 2
+        </label>
         <div className={style.checkTypes}>
           {types.map((type, index) => (
             <div key={index}>
@@ -196,13 +204,8 @@ const Create = () => {
           }`}
           disabled={buttonDisabled}
         >
-          Crear
+          Crear Pokemon
         </button>
-        <Link to="/home">
-          <button className={style.goBackBtn}>
-            <ArrowBackIcon />
-          </button>
-        </Link>
       </div>
     </form>
   );

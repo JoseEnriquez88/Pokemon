@@ -51,8 +51,6 @@ export const getPokemonsByName = (name) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(`${URL}?name=${name}`);
-      // if(!data.find((pokemon) => pokemon.name === name)) throw new Error(`no se encontró el pokemon con el nombre: ${name}`);
-
       const pokemonFound = data.map((pokemon) => ({
         name: pokemon.name,
         id: pokemon.id,
@@ -115,9 +113,6 @@ export const getAllTypes = () => {
       const { data } = await axios(endpoint);
       if (!data || data.length === 0)
         throw new Error("No se encuentran tipos en la base de datos");
-
-      // const typesFound = data.map((tipo) => tipo.name);
-      // console.log(typesFound);
       dispatch({
         type: GET_ALL_TYPES,
         payload: data,

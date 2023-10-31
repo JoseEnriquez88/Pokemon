@@ -33,8 +33,10 @@ const Detail = () => {
         {name ? (
           <div className={style.container}>
             <div className={style.titleCntnr}>
-              <Link to="/home" className={style.return} title="Volver a inicio">
-                <ArrowBackIcon className={style.icon} />
+              <Link to="/home" className={style.return}>
+                <button className={style.returnBtn} title="Volver al inicio">
+                  <ArrowBackIcon className={style.icon} />
+                </button>
               </Link>
               <h1 className={style.title}>{name}</h1>
             </div>

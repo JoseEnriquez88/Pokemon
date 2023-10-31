@@ -42,18 +42,20 @@
 }
 
 .detailBtn {
-  background-color: #385170;
+  background-color: transparent;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
   cursor: pointer;
   margin-bottom: 10px;
+  width: 50%;
   font-family: Sniglet, cursive;
   color: #ececec;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .detailBtn:hover {
-  color: cornflowerblue;
-  transition: color 0.3s ease;
+  background-color: #385170;
+  width: 50%;
+  transition: background-color 0.3s ease;
 }
