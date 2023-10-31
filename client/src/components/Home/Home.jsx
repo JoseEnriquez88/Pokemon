@@ -52,6 +52,7 @@ const Home = () => {
     };
   }, [dispatch, pokemones, messageError]);
 
+  // Cálculo de los índices de inicio y fin de los elementos en la página actual
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentPokemones = pokemones.slice(indexOfFirstItem, indexOfLastItem);
@@ -63,7 +64,7 @@ const Home = () => {
         onSearch={onSearch}
         onLoadAllPokemons={loadAllPokemons}
       />
-      {currentPokemones.length === 0 ? (
+      {currentPokemones.length === 0 ? ( // Verificar si no hay elementos en currentPokemones
         <img src={pikachu} alt="pikaPika" className={style.loader} />
       ) : (
         <div>

@@ -16,10 +16,10 @@ import {
 import axios from "axios";
 
 export const getAllPokemons = () => {
-  const endpointPokemons = "/pokemons";
+  const endpoint = "http://localhost:3001/pokemons";
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(endpointPokemons);
+      const { data } = await axios.get(endpoint);
       if (!data || data.length === 0)
         throw new Error("No se encuentran pokemones para mostrar");
 
@@ -47,10 +47,12 @@ export const getAllPokemons = () => {
 };
 
 export const getPokemonsByName = (name) => {
-  const endpointName = "/name";
+  const URL = "http://localhost:3001/name";
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`${endpointName}?name=${name}`);
+      const { data } = await axios.get(`${URL}?name=${name}`);
+      // if(!data.find((pokemon) => pokemon.name === name)) throw new Error(`no se encontró el pokemon con el nombre: ${name}`);
+
       const pokemonFound = data.map((pokemon) => ({
         name: pokemon.name,
         id: pokemon.id,
@@ -74,10 +76,10 @@ export const getPokemonsByName = (name) => {
 };
 
 export const getPokemonById = (id) => {
-  const endpointID = "/pokemons";
+  const endpoint = "http://localhost:3001/pokemons";
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`${endpointID}/${id}`);
+      const { data } = await axios.get(`${endpoint}/${id}`);
       if (!data) throw new Error(`No se encontró el pokemon con el id: ${id}`);
 
       const pokemon = {
@@ -107,10 +109,10 @@ export const getPokemonById = (id) => {
 };
 
 export const getAllTypes = () => {
-  const endpointTypes = "/types-db";
+  const endpoint = "http://localhost:3001/types-db";
   return async (dispatch) => {
     try {
-      const { data } = await axios(endpointTypes);
+      const { data } = await axios(endpoint);
       if (!data || data.length === 0)
         throw new Error("No se encuentran tipos en la base de datos");
 
@@ -131,10 +133,10 @@ export const getAllTypes = () => {
 };
 
 export const createPokemon = (pokemonCreado) => {
-  const endpointCreate = "/pokemons";
+  const endpoint = "http://localhost:3001/pokemons";
   return async (dispatch) => {
     try {
-      const response = await axios.post(endpointCreate, pokemonCreado);
+      const response = await axios.post(endpoint, pokemonCreado);
       const createdPokemon = response.data;
 
       dispatch({

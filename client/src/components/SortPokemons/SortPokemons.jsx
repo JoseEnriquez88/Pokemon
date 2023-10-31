@@ -14,7 +14,7 @@ const SortPokemons = () => {
   const dispatch = useDispatch();
   const pokemons = useSelector((state) => state.pokemons);
   const copyPokemons = useSelector((state) => state.copyPokemons);
-  const typesState = useSelector((state) => state.types);
+  const tipos = useSelector((state) => state.types);
 
   const handleFilter = (event) => {
     const filterOrigin = event.target.value;
@@ -125,7 +125,7 @@ const SortPokemons = () => {
         <option value="" disabled>
           Tipos
         </option>
-        {typesState.map((type) => (
+        {tipos.map((type) => (
           <option key={type.name} value={type.name}>
             {type.name}
           </option>
