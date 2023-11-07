@@ -155,7 +155,7 @@
 }
 
 .createBtn:hover {
-  background-color: #0bdd12;
+  /* background-color: #385170; */
   color: white;
   transition: background-color 0.3s ease;
 }
@@ -167,7 +167,7 @@
 .errors {
   /* background-color: aqua; */
   color: red;
-  font-size: 10px;
+  font-size: 0.8rem;
   margin: 0 auto;
   padding: 5px;
   width: 100px;
