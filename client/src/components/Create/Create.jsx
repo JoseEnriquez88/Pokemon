@@ -126,7 +126,7 @@ const Create = () => {
           {/* Div para imagen */}
           <div className={style.imageCntnr}>
             <label htmlFor="image">Imagen:</label>
-            <input type="text" name="image" onChange={handleChange} />
+            <input type="url" name="image" onChange={handleChange} />
             {errors.image && <p className={style.errors}>{errors.image}</p>}
           </div>
 
