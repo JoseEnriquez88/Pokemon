@@ -7,7 +7,7 @@ const getPokemonsById = async (id) => {
     const pokemonDB = await Pokemon.findByPk(id, { include: [Type] });
     if (!pokemonDB)
       throw new Error(
-        `No se encuentra el perro con el id: ${id} en la base de datos`
+        `No se encuentra el pokemon con el id: ${id} en la base de datos`
       );
 
     const pokemon = pokemonDB.toJSON();
@@ -29,7 +29,7 @@ const getPokemonsById = async (id) => {
 
   const pokemonApi = (await axios.get(`${URL}/${id}`)).data;
   if (!pokemonApi)
-    throw new Error(`No se encuentra el perro con el id: ${id} en la api`);
+    throw new Error(`No se encuentra el pokemon con el id: ${id} en la api`);
 
   const types = pokemonApi.types.map((type) => type.type.name);
 
