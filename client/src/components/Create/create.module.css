@@ -62,7 +62,7 @@
 }
 
 .firstSubCntnr {
-a  width: 50%;
+  width: 50%;
   border-right: 1px outset #ececec;
 }
 
@@ -106,7 +106,7 @@ a  width: 50%;
   margin: 0 auto;
 }
 
-.typesLabel{
+.typesLabel {
   margin-bottom: 10px;
 }
 
