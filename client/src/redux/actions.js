@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   GET_ALL_POKEMONS,
   GET_POKEMONS_BY_NAME,
@@ -13,7 +14,6 @@ import {
   ERROR,
   SORT_BY_ATTACK,
 } from "./action-types";
-import axios from "axios";
 
 export const getAllPokemons = () => {
   const endpoint = "/pokemons";
