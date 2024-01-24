@@ -13,7 +13,7 @@ const App = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/home";
   const isCreatePage = location.pathname === "/create";
-  const isDetailPage = location.pathname === "/detail/:id";
+  const isDetailPage = location.pathname === "/detail/";
 
   return (
     <div>
