@@ -7,7 +7,8 @@ import Footer from "./components/Footer/Footer";
 import Detail from "./components/Detail/Detail";
 import Error from "./components/Error/Error";
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+// axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = "https://pokemon-production-59d7.up.railway.app/";
 
 const App = () => {
   const location = useLocation();
