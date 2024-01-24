@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
 import style from "./carousel.module.css";
 
-import charmander from "../../assets/landingPokemons/charmander.jpeg";
-import eevee from "../../assets/landingPokemons/eevee.jpeg";
-import gengar from "../../assets/landingPokemons/gengar.jpeg";
+import charmander from "../../assets/landingPokemons/charmander.png";
+import eevee from "../../assets/landingPokemons/eeve.png";
+import gengar from "../../assets/landingPokemons/gengar.png";
 import pikachu from "../../assets/landingPokemons/pikachu.png";
-import snorlax from "../../assets/landingPokemons/snorlax.jpeg";
+import snorlax from "../../assets/landingPokemons/snorlax.png";
 
 const Carousel = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
