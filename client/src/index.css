@@ -2,6 +2,12 @@ body {
   background-image: url("../src/assets//backgroundIMG//backgorundPoke.jpg");
 }
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+
 * {
   padding: 0;
   margin: 0;

@@ -5,9 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const Footer = () => {
   return (
     <footer className={style.footer}>
-      <p>
-        © 2023 Copyright: <b>Jose Enriquez</b>
-      </p>
+      <p>&copy; {new Date().getFullYear()}: Jose Enriquez</p>
       <section className={style.section}>
         <a href="https://github.com/JoseEnriquez88" title="Ir a Github">
           <GitHubIcon />

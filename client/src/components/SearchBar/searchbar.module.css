@@ -9,7 +9,7 @@
 
 .input {
   padding-left: 7px;
-  height: 20px;
+  height: 30px;
   width: 300px;
   border-radius: 20px 0px 0px 20px;
 }
@@ -22,7 +22,7 @@
   color: #ececec;
   border-radius: 0px 20px 20px 0px;
   border: none;
-  padding: px 5px px 5px;
+  padding: 0px 5px 0px 5px;
   transition: color 0.3s ease;
 }
 
