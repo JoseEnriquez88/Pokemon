@@ -4,27 +4,27 @@ import SearchBar from "../SearchBar/SearchBar";
 import SortPokemons from "../SortPokemons/SortPokemons";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
+import logo from "../../assets/pokeCut.png";
 
 const Nav = ({ onSearch, handleChange, onLoadAllPokemons }) => {
   return (
     <nav className={style.navbar}>
       <div className={style.cntnr}>
-        <button
+        <img
+          src={logo}
+          alt="logo"
+          className={style.logo}
           onClick={onLoadAllPokemons}
-          className={style.homeBtn}
-          title="Resetear Pokemones"
-        >
-          <CatchingPokemonIcon className={style.pokemon} />
-          Pokemon
-        </button>
+        />
         <div className={style.sort}>
           <SortPokemons />
         </div>
         <div className={style.findOrCreate}>
           <Link to="/create">
-            <button className={style.createBtn}>
-              <AddBoxRoundedIcon titleAccess="Crear Pokemon" />
-            </button>
+            <AddBoxRoundedIcon
+              titleAccess="Crear Pokemon"
+              className={style.createBtn}
+            />
           </Link>
           <SearchBar onSearch={onSearch} handleChange={handleChange} />
         </div>

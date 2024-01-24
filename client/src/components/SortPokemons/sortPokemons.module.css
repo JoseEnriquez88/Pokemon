@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
+.mainCntnr {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
 .alfabetic,
 .origin,
 .attack,
 .types {
   background-color: transparent;
   border: none;
-  font-size: 15px;
+  font-size: 19px;
   color: #ececec;
   box-decoration-break: slice;
   font-family: Sniglet, cursive;
@@ -19,4 +25,11 @@
 .types:hover {
   background-color: #142d4c;
   cursor: pointer;
+}
+
+.alfabetic:focus,
+.origin:focus,
+.attack:focus,
+.types:focus{
+  background-color: #142d4c;
 }

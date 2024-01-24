@@ -3,31 +3,35 @@
 .mainCntnr {
   display: flex;
   justify-content: center;
+  background-color: #142d4c;
+  height: 100vh;
+  font-family: "Sniglet", sans-serif;
 }
 
 .container {
-  background-color: #142d4c;
-  width: 40rem;
-  margin: 10rem;
-  margin-top: 80px;
-  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  width: 50%;
+  height: 70%;
+  margin-top: 100px;
 }
 
 .cuatro {
-  font-family: Sniglet, sans-serif;
   font-size: 50px;
   color: #ff0000;
 }
 
 .error {
-  font-family: Sniglet, sans-serif;
   color: #ececec;
   font-size: 35px;
 }
 
 .textCntnr {
-  font-family: Sniglet, sans-serif;
   color: #ececec;
+  text-align: center;
 }
 
 .gif {
@@ -36,23 +40,21 @@
 }
 
 .btn {
-  font-family: Sniglet, sans-serif;
   color: #ececec;
-  background-color: #385170;
-  border-radius: 20px;
+  background-color: #0d2136;
+  border-radius: 10px;
   border: none;
   margin-bottom: 2rem;
   padding: 5px;
-  width: 100px;
-  transition: color 0.3s ease;
+  width: 30rem;
   text-align: center;
   line-height: 40px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .btn:hover {
-  cursor: pointer;
-  color: cornflowerblue;
-  transition: color 0.3s ease;
+  background-color: #385170;
 }
 
 .icon {

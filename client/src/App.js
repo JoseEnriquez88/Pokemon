@@ -13,6 +13,7 @@ axios.defaults.baseURL = "https://pokemon-production-59d7.up.railway.app/";
 const App = () => {
   const location = useLocation();
   const isLandingPage = location.pathname === "/";
+  const isErrorPage = location.pathname === "*";
 
   return (
     <div>
@@ -23,9 +24,7 @@ const App = () => {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<Error />} />
       </Routes>
-
-      {/* Renderiza el Footer solo si no estás en la landing page */}
-      {!isLandingPage && <Footer />}
+      {(!isLandingPage || !isErrorPage) && <Footer />}
     </div>
   );
 };

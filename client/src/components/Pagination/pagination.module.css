@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
 
 .pageCntnr {
-  padding-bottom: 10px;
-  /* margin: 0 auto; */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .pageCntnr button {
@@ -22,9 +21,9 @@
 
 .pageIndicator {
   font-family: Sniglet, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   color: #385170;
-  padding: 5px;
+  padding: 10px;
 }
 
 .active-page {
@@ -40,10 +39,10 @@
 .icon {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
+  padding: 10px;
 }
 
 .icon:hover {
   color: cornflowerblue;
-  transition: color 0.3s ease;
 }

@@ -9,7 +9,7 @@
 
 .input {
   padding-left: 7px;
-  height: 30px;
+  height: 40px;
   width: 300px;
   border-radius: 20px 0px 0px 20px;
 }
@@ -17,7 +17,7 @@
 .btn {
   display: flex;
   justify-items: flex-end;
-  font-family: Sniglet, cursive;
+  font-family: "Sniglet", cursive;
   background-color: #385170;
   color: #ececec;
   border-radius: 0px 20px 20px 0px;
@@ -32,5 +32,5 @@
 }
 
 .icon {
-  transform: translate(-5%, 5%);
+  transform: translate(-10%, 30%);
 }

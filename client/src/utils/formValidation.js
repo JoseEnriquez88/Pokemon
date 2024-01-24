@@ -5,21 +5,17 @@ const imageRegexURL = /(https?:\/\/.*\.(?:png|jpg|jpeg))/i;
 const formValidation = (pokemon) => {
   const errors = {};
 
-  // Valido que contenga nombre
   if (!nameRegex.test(pokemon.name) || pokemon.name === "")
     errors.name = "Campo obligatorio.";
   if (pokemon.name.length > 50)
     errors.name = "El nombre del pokemon no puede tener mas de 50 caracteres";
 
-  // Valido que la imagen sea jpg, jpeg, png o url
   if (!imageRegex.test(pokemon.image) || !imageRegexURL.test(pokemon.image))
     errors.image =
-      // 'Sólo formato jpg, jpeg o png.';
       'Sólo URL por el momento.'
   if (pokemon.image === "")
     errors.image = "Campo obligatorio.";
 
-  // Valido que las siguientes características esten completos
   if (pokemon.life <= 0 || isNaN(parseFloat(pokemon.life)))
     errors.life = "Campo obligatorio.";
   if (pokemon.life > 999)
@@ -45,7 +41,6 @@ const formValidation = (pokemon) => {
   if (pokemon.weight > 999)
     errors.life = "Digite un valor menor a 999";
 
-  // Valido que los tipos sean solo letras
   if (pokemon.types === "")
     errors.types = "Debe seleccionar al menos 1 tipo y hasta máximo 2.";
 
