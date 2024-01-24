@@ -54,7 +54,6 @@
 }
 
 .inputCntnr {
-  /* background-color: yellow; */
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
@@ -63,8 +62,7 @@
 }
 
 .firstSubCntnr {
-  /* background-color: red; */
-  width: 50%;
+a  width: 50%;
   border-right: 1px outset #ececec;
 }
 
