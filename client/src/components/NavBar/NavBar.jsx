@@ -2,7 +2,7 @@ import style from "./nav.module.css";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import SortPokemons from "../SortPokemons/SortPokemons";
-import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
+// import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
 import logo from "../../assets/pokeCut.png";
 

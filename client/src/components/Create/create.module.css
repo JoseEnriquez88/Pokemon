@@ -3,11 +3,11 @@
 .mainCntnr {
   background-color: #212529;
   border: 3px solid #385170;
-  border-radius: 25px;
+  border-radius: 15px;
   width: 50%;
   height: 100%;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-bottom: 50px;
   font-family: "Sniglet", cursive;
   color: #fff;
@@ -16,6 +16,7 @@
 .titleCntnr {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .return {
@@ -57,6 +58,7 @@
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
+  margin-top: 50px;
   width: 75%;
   padding-bottom: 50px;
 }
@@ -102,12 +104,16 @@
 }
 
 .typesCntnr {
-  width: 75%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
 }
 
 .typesLabel {
-  margin-bottom: 10px;
+  margin: 100px 0 20px 0;
 }
 
 .checkTypes {
@@ -115,7 +121,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2px;
+  gap: 1rem;
   margin-top: 0;
 }
 

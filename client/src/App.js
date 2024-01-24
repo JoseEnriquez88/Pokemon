@@ -7,13 +7,13 @@ import Footer from "./components/Footer/Footer";
 import Detail from "./components/Detail/Detail";
 import Error from "./components/Error/Error";
 
-axios.defaults.baseURL = "https://pokemon-production-59d7.up.railway.app/";
-// axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 const App = () => {
   const location = useLocation();
-  const isLandingPage = location.pathname === "/";
-  const isErrorPage = location.pathname === "*";
+  const isHomePage = location.pathname === "/home";
+  const isCreatePage = location.pathname === "/create";
+  const isDetailPage = location.pathname === "/detail/:id";
 
   return (
     <div>
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      {(!isLandingPage || !isErrorPage) && <Footer />}
+      {(isHomePage || isCreatePage || isDetailPage) && <Footer />}
     </div>
   );
 };
