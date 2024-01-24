@@ -89,3 +89,36 @@
   transition: background-color 0.3s ease;
   border-radius: 10px;
 }
+
+@media (max-width: 800px) {
+  .mainCntnr {
+    width: 100vw;
+  }
+
+  .logo {
+    width: 400px;
+  }
+
+  .minorContainer {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .txtContainer {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 100px;
+  }
+
+  .txt {
+    text-align: center;
+  }
+
+  .carouselContainer {
+    display: none;
+  }
+
+  .buttonContainer{
+    margin-top: 100px;
+  }
+}

@@ -4,7 +4,12 @@
   justify-content: space-around;
   padding: 2em;
   gap: 1em;
-  border-radius: 10em;
   width: 80%;
   margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .cards {
+    width: 100%;
+  }
 }
