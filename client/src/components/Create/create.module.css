@@ -60,7 +60,6 @@
   margin: 0 auto;
   margin-top: 50px;
   width: 75%;
-  padding-bottom: 50px;
 }
 
 .firstSubCntnr {
@@ -82,9 +81,10 @@
 .heightCntnr,
 .weightCntnr {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 150px;
+  width: 100%;
   gap: 5px;
   padding-top: 30px;
 }
@@ -101,6 +101,20 @@
   border: none;
   font-family: Sniglet, sans-serif;
   color: #ececec;
+  padding: 5px 5px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.nameCntnr input:focus,
+.imageCntnr input:focus,
+.lifeCntnr input:focus,
+.attackCntnr input:focus,
+.defenseCntnr input:focus,
+.speedCntnr input:focus,
+.heightCntnr input:focus,
+.weightCntnr input:focus {
+  outline: none;
 }
 
 .typesCntnr {
@@ -171,10 +185,9 @@
 .errors {
   /* background-color: aqua; */
   color: red;
-  font-size: 0.8rem;
+  font-size: 15px;
+  text-align: left;
   margin: 0 auto;
-  padding: 5px;
-  width: 100px;
 }
 
 .loader {
