@@ -9,7 +9,18 @@
 <h3>Frontend: HTML, CSS, Javascript, React, Redux</h3>
 <h3>Backend: Node, Express, PostgreSQL</h3>
 <hr />
-<h1>Algunas imágenes de la aplicación/Some screenshots of the application.</h1>
+<h1>Algunas imágenes de la aplicación</h1>
+<hr/>
+<h1>Some screenshots of the application.</h1>
 <h2>Landing</h2>
 <img src="./client/public/screens/landing.png" alt="" />
+<hr />
+<h2>Home</h2>
+<img src="./client/public/screens/home.png" alt="" />
+<hr />
+<h2>Pokemon detail/detalle del pokemon</h2>
+<img src="./client/public/screens/detail.png" alt="" />
+<hr />
+<h2>Create form/Formulario de creación</h2>
+<img src="./client/public/screens/create.png" alt="" />
 <hr />
