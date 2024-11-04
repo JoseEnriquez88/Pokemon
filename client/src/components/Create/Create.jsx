@@ -108,7 +108,7 @@ const Create = () => {
       <div className={style.titleCntnr}>
         <Link to="/home" className={style.return}>
           <button className={style.returnBtn} title="Volver al inicio">
-            <ArrowBackIcon className={style.icon}/>
+            <ArrowBackIcon className={style.icon} />
           </button>
         </Link>
         <h1 className={style.title}>Crea tu pokemon</h1>
@@ -119,7 +119,7 @@ const Create = () => {
           {/* Div para el nombre */}
           <div className={style.nameCntnr}>
             <label htmlFor="name">Nombre:</label>
-            <input type="text" name="name" onChange={handleChange} />
+            <input type="text" name="name" onChange={handleChange} autoFocus />
             {errors.name && <p className={style.errors}>{errors.name}</p>}
           </div>
 
