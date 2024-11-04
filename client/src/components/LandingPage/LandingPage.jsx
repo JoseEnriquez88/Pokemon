@@ -1,11 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../Carousel/Carousel.jsx";
 import style from "./landing.module.css";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-
 import pokeLogo from "../../assets/pokeCut.png";
-
 import charmander from "../../assets/landingPokemons/charmander.png";
 import eevee from "../../assets/landingPokemons/eeve.png";
 import gengar from "../../assets/landingPokemons/gengar.png";
