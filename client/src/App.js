@@ -17,7 +17,7 @@ const App = () => {
   const isDetailPage = location.pathname === "/detail/";
 
   return (
-    <div>
+    <main>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
@@ -26,7 +26,7 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
       {(isHomePage || isCreatePage || isDetailPage) && <Footer />}
-    </div>
+    </main>
   );
 };
 
