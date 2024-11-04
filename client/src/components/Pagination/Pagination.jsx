@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./pagination.module.css";
 import { Link } from "react-router-dom";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
