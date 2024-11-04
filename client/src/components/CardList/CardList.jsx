@@ -1,5 +1,5 @@
 import style from "./cardlist.module.css";
-import Cards from "../Cards/Cards";
+import { Cards } from "../Cards";
 
 const CardList = ({ pokemones }) => {
   return (
