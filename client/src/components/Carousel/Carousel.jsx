@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 import style from "./carousel.module.css";
-
 import charmander from "../../assets/landingPokemons/charmander.png";
 import eevee from "../../assets/landingPokemons/eeve.png";
 import gengar from "../../assets/landingPokemons/gengar.png";
