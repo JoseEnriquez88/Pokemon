@@ -65,8 +65,7 @@
   background-color: #385170;
 }
 
-@media (max-width: 800px){
-  .container{
-    
+@media (max-width: 800px) {
+  .container {
   }
 }
